@@ -12,7 +12,11 @@
         ShowMaxRestoreButton="False"
         ShowCloseButton="False"
         TitleCaps="False"
-        ResizeMode="CanResizeWithGrip">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None"
+        IgnoreTaskbarOnMaximize="True">
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>

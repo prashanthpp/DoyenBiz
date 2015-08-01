@@ -11,6 +11,12 @@
         ShowMinButton="False"
         ShowMaxRestoreButton="False"
         ShowCloseButton="False"
+        TitleCaps="False"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None"
+        IgnoreTaskbarOnMaximize="True"
         BorderBrush="Black"
         BorderThickness="1"
         >

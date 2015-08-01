@@ -10,7 +10,13 @@
         Title="Mobile Services"
         ShowMinButton="False"
         ShowMaxRestoreButton="False"
-        ShowCloseButton="False">
+        ShowCloseButton="False"
+        TitleCaps="False"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None"
+        IgnoreTaskbarOnMaximize="True">
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
