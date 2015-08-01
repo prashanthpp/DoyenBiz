@@ -15,6 +15,9 @@
                       TitleCaps="False"
                       ResizeMode="CanResizeWithGrip"
                       >
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="Resources/Images/ScreenBackground.jpg"/>
+    </Controls:MetroWindow.Background>
     <Grid x:Name="mainGrid" Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".55*"/>
