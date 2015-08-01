@@ -24,30 +24,19 @@
         </Grid.RowDefinitions>
         
         <Label Grid.Row="0" Grid.Column="0" Content="Choose your Bank" Style="{StaticResource TitleText}"/>
-        <Grid x:Name="bankLogos" Grid.Column="0" Grid.Row="1" Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource gridTiles}"/>
-            <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource gridTiles}"/>
-            <Grid Grid.Row="0" Grid.Column="2" Style="{StaticResource gridTiles}"/>
-            <Grid Grid.Row="0" Grid.Column="3" Style="{StaticResource gridTiles}"/>
-            <Grid Grid.Row="0" Grid.Column="4" Style="{StaticResource gridTiles}"/>
-            <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource gridTiles}"/>
-            <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource gridTiles}"/>
-            <Grid Grid.Row="1" Grid.Column="2" Style="{StaticResource gridTiles}"/>
-            <Grid Grid.Row="1" Grid.Column="3" Style="{StaticResource gridTiles}"/>
-            <Grid Grid.Row="1" Grid.Column="4" Style="{StaticResource gridTiles}"/>
-        </Grid>
+        <!--<WrapPanel Grid.Row="1" Grid.Column="0">
+            <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                <Controls:Tile.Background>
+                    <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                </Controls:Tile.Background>
+            </Controls:Tile>
+        </WrapPanel>-->
+        <ItemsControl ItemsSource="{Binding ListOfBanks}" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </Grid>
 </Controls:MetroWindow>
