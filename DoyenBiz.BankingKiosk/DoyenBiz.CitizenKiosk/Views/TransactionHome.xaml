@@ -1,13 +1,13 @@
-﻿<Controls:MetroWindow x:Class="DoyenBiz.BankingKiosk.Views.BankOptions"
+﻿<Controls:MetroWindow x:Class="DoyenBiz.CitizenKiosk.Views.TransactionHome"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DoyenBiz.BankingKiosk.Views"
-        mc:Ignorable="d"
-        Title="Bank Home" 
+        xmlns:local="clr-namespace:DoyenBiz.CitizenKiosk"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="TSP Home"
         ShowMinButton="False"
         ShowMaxRestoreButton="False"
         ShowCloseButton="False"
@@ -16,29 +16,28 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         WindowStyle="None"
-        IgnoreTaskbarOnMaximize="True"
-        BorderBrush="Black"
-        BorderThickness="1"
-        >
+        IgnoreTaskbarOnMaximize="True">
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
     <Grid x:Name="mainGrid" Margin="5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".4*"/>
             <ColumnDefinition Width=".6*"/>
+            <ColumnDefinition Width=".4*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
             <RowDefinition Height=".2*"/>
-            <RowDefinition Height=".8*"/>
+            <RowDefinition Height=".6*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-            <Label Content="Choose your Bank" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
-        </Grid>
-        <Image Grid.Row="01" Grid.Column="0" HorizontalAlignment="Left" Source="/Resources/Images/icici.png" Margin="20,0,0,0"/>
 
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Content="Select your Transaction" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Viewbox HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+            </Viewbox>
+        </Grid>
+        <Image Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Source="/Resources/Images/icici.png" Margin="20,0,0,0"/>
         <ListBox Margin="50" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Column="0" Grid.Row="2"  Style="{StaticResource contentListBox}" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -52,34 +51,25 @@
                 </Style>
             </ListBox.ItemContainerStyle>
             <ListBoxItem>
-                <Button  Style="{StaticResource MetroButton}">Withdraw Cash</Button>
+                <Button  Style="{StaticResource LargeMetroButton}">Recharge Pre-paid Mobile</Button>
             </ListBoxItem>
             <ListBoxItem>
-                <Button Style="{StaticResource MetroButton}">Deposit Cash</Button>
-            </ListBoxItem>
-            <ListBoxItem>
-                <Button Style="{StaticResource MetroButton}">Deposit Cheque</Button>
-            </ListBoxItem>
-            <ListBoxItem>
-                <Button Style="{StaticResource MetroButton}">Print Mini Statement</Button>
+                <Button Style="{StaticResource MetroButton}">Pay Post Pail Bill</Button>
             </ListBoxItem>
         </ListBox>
         <Grid x:Name="rightStaticText" Grid.Row="2" Grid.Column="1">
             <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">
                 <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
                     <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}">
-                This ATM uses a two-factor Biometric Authentication to check you are the account holder. By continuing to use the ATM services, you agree to provide you finger print and you agree to have your picture taken
+                Any important Notes
                     <LineBreak/>
                     <LineBreak/>
-                 If your picture of finger print does not match the Account Holder's Biometric File, we will send a verification SMS to the Account Holder to authorize the transaction
+                 For any help or support needed to use this KIOSK, Please call us on 1-800-CITIZEN-KOISK
                     <LineBreak/>
-                    <LineBreak/>
-                 For any help or support needed to use the KIOSK, please call us on 1-800-CITIZEN-KIOSK.
-
                     </TextBlock>
                 </ScrollViewer>
             </Border>
         </Grid>
+
     </Grid>
-    
 </Controls:MetroWindow>

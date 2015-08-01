@@ -40,7 +40,7 @@
         <Grid x:Name="servicesImages" Grid.Row="1" Grid.Column="0">
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <WrapPanel>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}" Click="Service_click" Tag="Mobile">
                         <Controls:Tile.Background>
                             <ImageBrush ImageSource="Resources/Images/icici.png"/>
                         </Controls:Tile.Background>

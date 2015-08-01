@@ -11,13 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace DoyenBiz.BankingKiosk.Views
 {
     /// <summary>
     /// Interaction logic for BankOptions.xaml
     /// </summary>
-    public partial class BankOptions 
+    public partial class BankOptions : MetroWindow
     {
         public BankOptions()
         {

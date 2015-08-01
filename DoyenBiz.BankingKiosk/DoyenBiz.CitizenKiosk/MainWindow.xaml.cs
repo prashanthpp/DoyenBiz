@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using DoyenBiz.CitizenKiosk.Utilities;
 
 namespace DoyenBiz.CitizenKiosk
 {
@@ -24,6 +25,11 @@ namespace DoyenBiz.CitizenKiosk
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Service_click(object sender, RoutedEventArgs e)
+        {
+            NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.MobileServices);
         }
     }
 }

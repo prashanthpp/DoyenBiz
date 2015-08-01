@@ -13,25 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
-using DoyenBiz.BankingKiosk.Views;
-using DoyenBiz.BankingKiosk.Utilities;
 
-namespace DoyenBiz.BankingKiosk
+namespace DoyenBiz.CitizenKiosk.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for TransactionHome.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class TransactionHome : MetroWindow
     {
-        public MainWindow()
+        public TransactionHome()
         {
             InitializeComponent();
-        }
-
-        private void bank_click(object sender, RoutedEventArgs e)
-        {
-            NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.BankOptions);
         }
     }
 }

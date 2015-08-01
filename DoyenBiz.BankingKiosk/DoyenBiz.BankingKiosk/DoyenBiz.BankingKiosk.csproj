@@ -66,6 +66,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utilities\NavigationServiceHelper.cs" />
     <Compile Include="Views\BankOptions.xaml.cs">
       <DependentUpon>BankOptions.xaml</DependentUpon>
     </Compile>

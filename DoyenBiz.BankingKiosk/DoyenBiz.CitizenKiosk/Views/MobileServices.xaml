@@ -18,7 +18,7 @@
         WindowStyle="None"
         IgnoreTaskbarOnMaximize="True">
     <Controls:MetroWindow.Background>
-        <ImageBrush ImageSource="Resources/Images/ScreenBackground.jpg"/>
+        <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
     <Grid x:Name="mainGrid" Margin="5">
         <Grid.ColumnDefinitions>
@@ -41,64 +41,64 @@
         <Grid x:Name="servicesImages" Grid.Row="1" Grid.Column="0">
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
             <WrapPanel>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}" Click="provider_click" Tag="Airtel">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
                     </Controls:Tile.Background>
                 </Controls:Tile>
             </WrapPanel>
