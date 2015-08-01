@@ -15,28 +15,92 @@
                       >
     <Grid x:Name="mainGrid" Margin="5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".6*"/>
-            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width=".55*"/>
+            <ColumnDefinition Width=".45*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
             <RowDefinition Height=".8*"/>
         </Grid.RowDefinitions>
-        
+
         <Label Grid.Row="0" Grid.Column="0" Content="Choose your Bank" Style="{StaticResource TitleText}"/>
-        <!--<WrapPanel Grid.Row="1" Grid.Column="0">
-            <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                <Controls:Tile.Background>
-                    <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                </Controls:Tile.Background>
-            </Controls:Tile>
-        </WrapPanel>-->
-        <ItemsControl ItemsSource="{Binding ListOfBanks}" >
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
+        <Grid x:Name="bankLogos" Grid.Row="1" Grid.Column="0">
+            <WrapPanel>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+            </WrapPanel>
+        </Grid>
+        <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="1">
+            <Border Style="{StaticResource contentBoxBorder}">
+                <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" TextAlignment="Justify">
+                This ATM uses a two-factor Biometric Authentication to check you are the account holder. By continuing to use the ATM services, you agree to provide you finger print and you agree to have your picture taken
+                    <LineBreak/>
+                    <LineBreak/>
+                 If your picture of finger print does not match the Account Holder's Biometric File, we will send a verification SMS to the Account Holder to authorize the transaction
+                    <LineBreak/>
+                    <LineBreak/>
+                 For any help or support needed to use the KIOSK, please call us on 1-800-CITIZEN-KIOSK.
+
+                </TextBlock>
+            </Border>
+        </Grid>
     </Grid>
 </Controls:MetroWindow>
