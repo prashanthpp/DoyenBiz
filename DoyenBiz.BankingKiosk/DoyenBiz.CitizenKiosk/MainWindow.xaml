@@ -25,11 +25,12 @@
             <RowDefinition Height=".2*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0"  Content="Select your service" Style="{StaticResource TitleText}"/>
-
-        <Viewbox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" >
-            <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
-        </Viewbox>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Content="Select your Service" Style="{StaticResource TitleText}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Viewbox HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+            </Viewbox>
+        </Grid>
         <Grid x:Name="servicesImages" Grid.Row="1" Grid.Column="0">
             <WrapPanel>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
