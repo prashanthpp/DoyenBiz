@@ -21,11 +21,13 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".2*"/>
             <RowDefinition Height=".8*"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Select your Transaction" Style="{StaticResource TitleText}"/>
-        <ListBox Margin="50"
-                             ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Column="0" Grid.Row="1" >
+        <Image x:Name="companyLogo" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+        <Image Grid.Row="01" Grid.Column="0" HorizontalAlignment="Left" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+        <ListBox Margin="50" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Column="0" Grid.Row="2" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Vertical"></WrapPanel>
@@ -37,21 +39,21 @@
                 </Style>
             </ListBox.ItemContainerStyle>
             <ListBoxItem>
-                <Button FontSize="40" Style="{StaticResource MetroButton}">Withdraw Cash</Button>
+                <Button  Style="{StaticResource MetroButton}">Withdraw Cash</Button>
             </ListBoxItem>
             <ListBoxItem>
-                <Button FontSize="40" Style="{StaticResource MetroButton}">Deposit Cash</Button>
+                <Button Style="{StaticResource MetroButton}">Deposit Cash</Button>
             </ListBoxItem>
             <ListBoxItem>
-                <Button FontSize="40" Style="{StaticResource MetroButton}">Deposit Cheque</Button>
+                <Button Style="{StaticResource MetroButton}">Deposit Cheque</Button>
             </ListBoxItem>
             <ListBoxItem>
-                <Button FontSize="40" Style="{StaticResource MetroButton}">Print Mini Statement</Button>
+                <Button Style="{StaticResource MetroButton}">Print Mini Statement</Button>
             </ListBoxItem>
         </ListBox>
-        <WrapPanel  Grid.Row="1" Grid.Column="1">
+        <WrapPanel  Grid.Row="2" Grid.Column="1">
         <Border BorderThickness="3" BorderBrush="Black" >
-                <TextBlock FontSize="25" TextWrapping="Wrap" FontFamily="SegoUI">
+                <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}">
                 This ATM uses a two-factor Biometric Authentication to check you are the account holder. By continuing to use the ATM services, you agree to provide you finger print and you agree to have your picture taken
                     <LineBreak/>
                     <LineBreak/>
