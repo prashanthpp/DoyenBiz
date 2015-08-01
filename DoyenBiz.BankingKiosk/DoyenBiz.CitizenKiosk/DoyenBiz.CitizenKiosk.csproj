@@ -116,9 +116,17 @@
   <ItemGroup>
     <Folder Include="DataAccess\" />
     <Folder Include="Models\" />
-    <Folder Include="Resources\Images\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Axis.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Axis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\icici.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

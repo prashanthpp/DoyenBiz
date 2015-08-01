@@ -25,11 +25,10 @@
             <RowDefinition Height=".8*"/>
         </Grid.RowDefinitions>
 
-        <Viewbox Grid.Row="0" Grid.Column="0">
-        <Label  Content="Choose your Bank" Style="{StaticResource TitleText}"/>
-        </Viewbox>
-        <Viewbox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" >
-        <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="Choose your Bank" Style="{StaticResource TitleText}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <Viewbox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
         </Viewbox>
         <Grid x:Name="bankLogos" Grid.Row="1" Grid.Column="0">
             <WrapPanel>
@@ -106,7 +105,6 @@
                     <LineBreak/>
                     <LineBreak/>
                  For any help or support needed to use the KIOSK, please call us on 1-800-CITIZEN-KIOSK.
-
                     </TextBlock>
                 </ScrollViewer>
             </Border>

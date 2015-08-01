@@ -18,24 +18,96 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
-            <RowDefinition Height=".8*"/>
+            <RowDefinition Height=".6*"/>
+            <RowDefinition Height=".2*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Select your Service" Style="{StaticResource TitleText}"/>
-        <Grid x:Name="bankLogos" Grid.Column="0" Grid.Row="1" Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0"  Content="Select your service" Style="{StaticResource TitleText}"/>
+
+        <Viewbox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" >
+            <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+        </Viewbox>
+        <Grid x:Name="servicesImages" Grid.Row="1" Grid.Column="0">
+            <WrapPanel>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+            </WrapPanel>
         </Grid>
+        <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="1">
+            <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
+                    <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}">
+                Welcome to TAJ DECCAN, Banjara Hills, Hyderabad Citizen Kiosk.
+                    <LineBreak/>
+                    <LineBreak/>
+                 This Citizen Kiosk is managed by DOYENBIZ. For any queries or complaints, please contact us at 9000090000.
+                    <LineBreak/>
+                    </TextBlock>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        <StackPanel x:Name="footerGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
+            <Label x:Name="footerBalanceLabel" Content="Kiosk Pre-Paid Balance" FontSize="24"></Label>
+            <Label x:Name="footerBalanceCurrency" Content="INR" FontSize="24" Foreground="Green"></Label>
+            <Label x:Name="footerBalanceValue" Content="45540" FontSize="24" Foreground="Green"></Label>
+        </StackPanel>
     </Grid>
 </Controls:MetroWindow>
