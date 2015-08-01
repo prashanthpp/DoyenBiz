@@ -10,7 +10,9 @@
         Title="Home"
         ShowMinButton="False"
         ShowMaxRestoreButton="False"
-        ShowCloseButton="False">
+        ShowCloseButton="False"
+        TitleCaps="False"
+        ResizeMode="CanResizeWithGrip">
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
@@ -32,68 +34,70 @@
             </Viewbox>
         </Grid>
         <Grid x:Name="servicesImages" Grid.Row="1" Grid.Column="0">
-            <WrapPanel>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-            </WrapPanel>
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <WrapPanel>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                </WrapPanel>
+            </ScrollViewer>
         </Grid>
         <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="1">
             <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">

@@ -36,6 +36,7 @@
         </Grid>
         
         <Grid x:Name="bankLogos" Grid.Row="1" Grid.Column="0">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
             <WrapPanel>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
                     <Controls:Tile.Background>
@@ -98,6 +99,7 @@
                     </Controls:Tile.Background>
                 </Controls:Tile>
             </WrapPanel>
+            </ScrollViewer>
         </Grid>
         <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="1">
             <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">
