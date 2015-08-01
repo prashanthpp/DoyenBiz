@@ -12,6 +12,8 @@
                       ShowCloseButton="False"
                       BorderBrush="Black"
                       BorderThickness="1"
+                      TitleCaps="False"
+                      ResizeMode="CanResizeWithGrip"
                       >
     <Grid x:Name="mainGrid" Margin="5">
         <Grid.ColumnDefinitions>
@@ -23,8 +25,12 @@
             <RowDefinition Height=".8*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Choose your Bank" Style="{StaticResource TitleText}"/>
-        <Image x:Name="companyLogo" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+        <Viewbox Grid.Row="0" Grid.Column="0">
+        <Label  Content="Choose your Bank" Style="{StaticResource TitleText}"/>
+        </Viewbox>
+        <Viewbox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" >
+        <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+        </Viewbox>
         <Grid x:Name="bankLogos" Grid.Row="1" Grid.Column="0">
             <WrapPanel>
                 <Controls:Tile Style="{StaticResource SmallTileStyle}">
@@ -90,8 +96,8 @@
             </WrapPanel>
         </Grid>
         <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="1">
-            <Border Style="{StaticResource contentBoxBorder}">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
                     <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}">
                 This ATM uses a two-factor Biometric Authentication to check you are the account holder. By continuing to use the ATM services, you agree to provide you finger print and you agree to have your picture taken
                     <LineBreak/>
