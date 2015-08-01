@@ -1,0 +1,30 @@
+﻿<Controls:MetroWindow x:Class="DoyenBiz.BankingKiosk.Views.WithdrawCash"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoyenBiz.BankingKiosk.Views"
+        mc:Ignorable="d"
+        Title="Withdraw Cash Step 1" 
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        ShowMinButton="False"
+        ShowMaxRestoreButton="False"
+        ShowCloseButton="False"
+        TitleCaps="False"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None"
+        IgnoreTaskbarOnMaximize="True"
+        BorderBrush="Black"
+        BorderThickness="1"
+        xmlns:controls="clr-namespace:DoyenBiz.BankingKiosk.Controls"
+        >
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
+    </Controls:MetroWindow.Background>
+    <Grid>
+        <controls:KioskProgressBar ItemsSource="{Binding Steps}" Foreground="#FF086398" Progress="{Binding Progress}" SnapsToDevicePixels="True" Margin="40"/>
+    </Grid>
+</Controls:MetroWindow>

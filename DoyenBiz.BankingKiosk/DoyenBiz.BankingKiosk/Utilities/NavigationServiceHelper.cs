@@ -17,7 +17,8 @@ namespace DoyenBiz.BankingKiosk.Utilities
 
         public enum TargetWindow
         {
-            BankOptions
+            BankOptions,
+            WithdrawCash
         }
 
         public static void Navigate(Button element, MetroWindow currentWindow, TargetWindow targetWindow)
@@ -34,7 +35,8 @@ namespace DoyenBiz.BankingKiosk.Utilities
             {
                 case TargetWindow.BankOptions:
                     return new BankOptions();
-                   
+                case TargetWindow.WithdrawCash:
+                    return new WithdrawCash();
                 default:
                     throw new System.NotImplementedException("Invalid target window!");
 

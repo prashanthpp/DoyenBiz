@@ -52,7 +52,7 @@
                 </Style>
             </ListBox.ItemContainerStyle>
             <ListBoxItem>
-                <Button  Style="{StaticResource MetroButton}">Withdraw Cash</Button>
+                <Button  Style="{StaticResource MetroButton}" Click="WithdrawCash_Click">Withdraw Cash</Button>
             </ListBoxItem>
             <ListBoxItem>
                 <Button Style="{StaticResource MetroButton}">Deposit Cash</Button>

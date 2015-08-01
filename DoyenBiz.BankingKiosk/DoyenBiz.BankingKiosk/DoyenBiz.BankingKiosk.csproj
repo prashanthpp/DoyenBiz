@@ -66,9 +66,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\KioskProgressBar.cs" />
+    <Compile Include="Converters\IsLastItemConverter.cs" />
+    <Compile Include="Converters\IsProgressedConverter.cs" />
     <Compile Include="Utilities\NavigationServiceHelper.cs" />
     <Compile Include="Views\BankOptions.xaml.cs">
       <DependentUpon>BankOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WithdrawCash.xaml.cs">
+      <DependentUpon>WithdrawCash.xaml</DependentUpon>
     </Compile>
     <Page Include="Common\Styles.xaml">
       <SubType>Designer</SubType>
@@ -87,6 +93,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\BankOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WithdrawCash.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

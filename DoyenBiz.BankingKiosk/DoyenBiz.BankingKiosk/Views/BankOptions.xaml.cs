@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using DoyenBiz.BankingKiosk.Utilities;
 
 namespace DoyenBiz.BankingKiosk.Views
 {
@@ -23,6 +24,11 @@ namespace DoyenBiz.BankingKiosk.Views
         public BankOptions()
         {
             InitializeComponent();
+        }
+
+        private void WithdrawCash_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.WithdrawCash);
         }
     }
 }
