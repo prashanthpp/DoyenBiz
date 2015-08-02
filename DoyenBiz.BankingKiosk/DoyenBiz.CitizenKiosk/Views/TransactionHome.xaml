@@ -54,7 +54,7 @@
                 <Button  Style="{StaticResource LargeMetroButton}">Recharge Pre-paid Mobile</Button>
             </ListBoxItem>
             <ListBoxItem>
-                <Button Style="{StaticResource MetroButton}">Pay Post Pail Bill</Button>
+                <Button Style="{StaticResource MetroButton}">Pay Post Paid Bill</Button>
             </ListBoxItem>
         </ListBox>
         <Grid x:Name="rightStaticText" Grid.Row="2" Grid.Column="1">

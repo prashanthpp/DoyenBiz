@@ -19,7 +19,14 @@
         IgnoreTaskbarOnMaximize="True"
         BorderBrush="Black"
         BorderThickness="1"
+        xmlns:kioskWindows="clr-namespace:DoyenBiz.BankingKiosk.Views"
         >
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl x:Name="flyoutsControl">
+            <kioskWindows:WithdrawCash Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
+
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
@@ -34,7 +41,7 @@
             <RowDefinition Height=".8*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-            <Label Content="Choose your Bank" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="Select your Transaction" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
         </Grid>
         <Image Grid.Row="01" Grid.Column="0" HorizontalAlignment="Left" Source="/Resources/Images/icici.png" Margin="20,0,0,0"/>
@@ -79,7 +86,7 @@
                     </TextBlock>
                 </ScrollViewer>
             </Border>
-        </Grid>
+         </Grid>
     </Grid>
-    
+    <!--<KioskWindows:WithdrawCash />-->
 </Controls:MetroWindow>

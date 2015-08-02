@@ -23,7 +23,7 @@ namespace DoyenBiz.BankingKiosk.Views
     /// <summary>
     /// Interaction logic for WithdrawCash.xaml
     /// </summary>
-    public partial class WithdrawCash : MetroWindow
+    public partial class WithdrawCash : Flyout, INotifyPropertyChanged
     {
 
         private int m_progress;
@@ -84,7 +84,7 @@ namespace DoyenBiz.BankingKiosk.Views
 
         private async void validatePINButton_Click(object sender, RoutedEventArgs e)
         {
-            var controller = await this.ShowProgressAsync("Validating PIN...", "Please Wait...");
+            var controller = await BankOptions.CurrentWindow.ShowProgressAsync("Validating PIN Number ", "Please Wait...");
             controller.SetCancelable(true);
 
             double i = 0.0;
@@ -104,8 +104,8 @@ namespace DoyenBiz.BankingKiosk.Views
 
             if (controller.IsCanceled)
             {
-                await this.ShowMessageAsync("Transaction Cancelled","Going to Home page..");
-                NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.HomePage);
+                await BankOptions.CurrentWindow.ShowMessageAsync("Transaction Cancelled", "Going to Home page..");
+                NavigationServiceHelper.Navigate((sender as Button), BankOptions.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
             }
             else
             {
@@ -120,6 +120,63 @@ namespace DoyenBiz.BankingKiosk.Views
             this.swipeCard.Visibility = Visibility.Collapsed;
             Progress += 20;
             this.inputPIN.Visibility = Visibility.Visible;
+        }
+
+        private void thumbprintButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.bioAuth.Visibility = Visibility.Collapsed;
+            Progress += 20;
+            this.amountToWithdraw.Visibility = Visibility.Visible;
+            
+        }
+
+        private async void btnAmount_Click(object sender, RoutedEventArgs e)
+        {
+            var controller = await BankOptions.CurrentWindow.ShowProgressAsync("Processing your Transaction ... please wait", "Completing two-factor Biometric Authentication ... \nVerifying transaction with account holder ...");
+            controller.SetCancelable(true);
+
+            double i = 0.0;
+            while (i < 6.0)
+            {
+                double val = (i / 100.0) * 20.0;
+                controller.SetProgress(val);
+                if (controller.IsCanceled)
+                    break; //canceled progressdialog auto closes.
+
+                i += 1.0;
+
+                await Task.Delay(1000);
+            }
+
+            await controller.CloseAsync();
+
+            if (controller.IsCanceled)
+            {
+                await BankOptions.CurrentWindow.ShowMessageAsync("Transaction Cancelled", "Going to Home page..");
+                NavigationServiceHelper.Navigate((sender as Button), BankOptions.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
+            }
+            else
+            {
+                Transaction_Completed(sender, e);
+            }
+        }
+
+
+        private async void Transaction_Completed(object sender, RoutedEventArgs e)
+        {
+            var mySettings = new MetroDialogSettings()
+            {
+                AffirmativeButtonText = "I Collected Cash",
+                ColorScheme = BankOptions.CurrentWindow.MetroDialogOptions.ColorScheme
+            };
+
+            MessageDialogResult result = await BankOptions.CurrentWindow.ShowMessageAsync("Your Transaction is approved by  Account Holder ... Please Collect Cash", "",
+                MessageDialogStyle.Affirmative, mySettings);
+
+            if (result == MessageDialogResult.Affirmative)
+            {
+                NavigationServiceHelper.Navigate((sender as Button), BankOptions.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
+            }
         }
     }
 }

@@ -95,7 +95,9 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderThickness" Value="0"/>
                             <!--<Setter Property="Background" Value="DimGray"/>-->
-                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="BorderThickness" Value="4" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="#ADADAD"/>
@@ -142,7 +144,9 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderThickness" Value="0"/>
                             <!--<Setter Property="Background" Value="DimGray"/>-->
-                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="BorderThickness" Value="4" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="#ADADAD"/>

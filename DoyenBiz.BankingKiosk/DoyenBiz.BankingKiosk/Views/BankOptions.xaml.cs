@@ -26,9 +26,22 @@ namespace DoyenBiz.BankingKiosk.Views
             InitializeComponent();
         }
 
+        public static MetroWindow CurrentWindow;
         private void WithdrawCash_Click(object sender, RoutedEventArgs e)
         {
-            NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.WithdrawCash);
+            //NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.WithdrawCash);
+            CurrentWindow = this;
+            ToggleFlyout(0);
+        }
+
+        private void ToggleFlyout(int index)
+        {
+            var flyout = this.Flyouts.Items[index] as Flyout;
+            if (flyout == null)
+            {
+                return;
+            }
+            flyout.IsOpen = !flyout.IsOpen;
         }
     }
 }

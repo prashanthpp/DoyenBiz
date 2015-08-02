@@ -38,8 +38,8 @@ namespace DoyenBiz.BankingKiosk.Utilities
                     return new MainWindow();
                 case TargetWindow.BankOptions:
                     return new BankOptions();
-                case TargetWindow.WithdrawCash:
-                    return new WithdrawCash();
+                //case TargetWindow.WithdrawCash:
+                //    return new WithdrawCash();
                 default:
                     throw new System.NotImplementedException("Invalid target window!");
 
