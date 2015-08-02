@@ -17,6 +17,7 @@ namespace DoyenBiz.BankingKiosk.Utilities
 
         public enum TargetWindow
         {
+            HomePage,
             BankOptions,
             WithdrawCash
         }
@@ -33,6 +34,8 @@ namespace DoyenBiz.BankingKiosk.Utilities
         {
             switch (tWindow)
             {
+                case TargetWindow.HomePage:
+                    return new MainWindow();
                 case TargetWindow.BankOptions:
                     return new BankOptions();
                 case TargetWindow.WithdrawCash:

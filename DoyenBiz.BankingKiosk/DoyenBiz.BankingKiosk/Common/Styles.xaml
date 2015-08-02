@@ -36,6 +36,14 @@
         <Setter Property="TextAlignment" Value="Justify"/>        
     </Style>
 
+    <Style x:Key="instructionsText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="36"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+    
+    <Thickness x:Key="ControlMargin">0 5 0 0</Thickness>
+
     <Style x:Key="contentListBox" TargetType="ListBox">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
@@ -58,20 +66,20 @@
             </Setter>
         </Style>
 
-        <Style x:Key="MetroButton" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
-            <Setter Property="Background" Value="#EEEEEEEE"/>
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="10 5"/>
-            <Setter Property="FontSize" Value="20" />
-            <Setter Property="BorderThickness" Value="2" />
-            <Setter Property="Width" Value="200" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid>
+    <Style x:Key="MetroButton" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="#EEEEEEEE"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="10 5"/>
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
                         <Border
                                 x:Name="Border"
                                 Background="{TemplateBinding Background}"
@@ -82,30 +90,30 @@
                             </Border.Effect>
                         </Border>
 
-                            <ContentPresenter
+                        <ContentPresenter
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 Margin="{TemplateBinding Padding}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                 RecognizesAccessKey="True" />
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="OpacityMask" Value="#AA888888"/>
-                                <Setter Property="Margin" Value="2 1" />
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="BorderThickness" Value="0"/>
-                                <!--<Setter Property="Background" Value="DimGray"/>-->
-                                <Setter Property="Foreground" Value="White"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#ADADAD"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="OpacityMask" Value="#AA888888"/>
+                            <Setter Property="Margin" Value="2 1" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <!--<Setter Property="Background" Value="DimGray"/>-->
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <converters:IsLastItemConverter x:Key="IsLastItemConverter"/>
     <converters:IsProgressedConverter x:Key="IsProgressedConverter"/>

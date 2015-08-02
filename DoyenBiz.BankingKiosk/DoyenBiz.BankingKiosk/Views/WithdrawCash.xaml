@@ -25,6 +25,59 @@
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
     <Grid>
-        <controls:KioskProgressBar ItemsSource="{Binding Steps}" Foreground="#FF086398" Progress="{Binding Progress}" SnapsToDevicePixels="True" Margin="40"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".15*"/>
+            <RowDefinition Height=".8*"/>               
+        </Grid.RowDefinitions>
+        <Label Content="Withdraw Transaction" Grid.Row="0" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <controls:KioskProgressBar x:Name="transactionProgressBar" Grid.Row="1" ItemsSource="{Binding Steps}" Foreground="#FF086398" Progress="{Binding Progress}" SnapsToDevicePixels="True" Margin="40"/>
+        <Grid x:Name="swipeCard" Grid.Row="2" Visibility="Visible">
+            <Grid HorizontalAlignment="Center" Margin="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height=".7*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow">Please Swipe your Bank Credit/Debit Card to Continue...</TextBlock>
+                <Image Grid.Row="1" Margin="10" Source="/Resources/Images/icici.png" Height="100"></Image>
+                <Button x:Name="cardEnteredButton" Grid.Row="1" Width="100" Height="50"
+                        BorderThickness="2" 
+                        Style="{StaticResource MetroButton}"
+                        Margin="300,0,0,0" Content="Go"
+                        VerticalAlignment="Center" Click="cardEnteredButton_Click"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="inputPIN" Grid.Row="2" Visibility="Collapsed">
+            <Grid HorizontalAlignment="Center" Margin="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height=".2*"/>
+                    <RowDefinition Height=".5*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow">Please enter your 4 digit PIN Number</TextBlock>
+                <Grid Grid.Row="1"  Height="50" HorizontalAlignment="Center">
+                <PasswordBox x:Name="inputPINBox" Width="100" Height="50"
+                             Controls:TextBoxHelper.ClearTextButton="True"
+                             VerticalContentAlignment="Center"
+                             MaxLength="4"
+                             />
+                    <Button x:Name="validatePINButton" Width="100" Height="50"
+                        BorderThickness="2" 
+                        Style="{StaticResource MetroButton}"
+                        Margin="300,0,0,0" Content="Go"
+                        VerticalAlignment="Center" Click="validatePINButton_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid x:Name="bioAuth" Grid.Row="2" Visibility="Collapsed">
+            <Grid HorizontalAlignment="Center" Margin="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height=".7*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow">Place your right thumb on the finger print scanner..</TextBlock>
+                <Image Grid.Row="1" Margin="10" Source="/Resources/Images/icici.png" Height="100"></Image>
+            </Grid>
+        </Grid>
     </Grid>
 </Controls:MetroWindow>

@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using MahApps.Metro.Controls.Dialogs;
+using DoyenBiz.BankingKiosk.Utilities;
 
 namespace DoyenBiz.BankingKiosk.Views
 {
@@ -25,6 +27,7 @@ namespace DoyenBiz.BankingKiosk.Views
     {
 
         private int m_progress;
+        private int inputPINNumber;
 
         public int Progress
         {
@@ -33,6 +36,16 @@ namespace DoyenBiz.BankingKiosk.Views
             {
                 m_progress = value;
                 OnPropertyChanged("Progress");
+            }
+        }
+
+        public int InputPINNumber
+        {
+            get { return inputPINNumber; }
+            set
+            {
+                inputPINNumber = value;
+                OnPropertyChanged("InputPINNumber");
             }
         }
 
@@ -60,9 +73,6 @@ namespace DoyenBiz.BankingKiosk.Views
             Progress += 20;
         }
 
-
-
-       
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName)
         {
@@ -72,5 +82,44 @@ namespace DoyenBiz.BankingKiosk.Views
             }
         }
 
+        private async void validatePINButton_Click(object sender, RoutedEventArgs e)
+        {
+            var controller = await this.ShowProgressAsync("Validating PIN...", "Please Wait...");
+            controller.SetCancelable(true);
+
+            double i = 0.0;
+            while (i < 6.0)
+            {
+                double val = (i / 100.0) * 20.0;
+                controller.SetProgress(val);
+                if (controller.IsCanceled)
+                    break; //canceled progressdialog auto closes.
+
+                i += 1.0;
+
+                await Task.Delay(1000);
+            }
+
+            await controller.CloseAsync();
+
+            if (controller.IsCanceled)
+            {
+                await this.ShowMessageAsync("Transaction Cancelled","Going to Home page..");
+                NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.HomePage);
+            }
+            else
+            {
+                this.inputPIN.Visibility = Visibility.Collapsed;
+                Progress += 20;
+                this.bioAuth.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void cardEnteredButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.swipeCard.Visibility = Visibility.Collapsed;
+            Progress += 20;
+            this.inputPIN.Visibility = Visibility.Visible;
+        }
     }
 }
