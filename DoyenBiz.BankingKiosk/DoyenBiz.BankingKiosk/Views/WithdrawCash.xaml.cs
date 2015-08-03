@@ -17,6 +17,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using MahApps.Metro.Controls.Dialogs;
 using DoyenBiz.BankingKiosk.Utilities;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
+using System.Configuration;
 
 namespace DoyenBiz.BankingKiosk.Views
 {
@@ -84,34 +88,77 @@ namespace DoyenBiz.BankingKiosk.Views
 
         private async void validatePINButton_Click(object sender, RoutedEventArgs e)
         {
-            var controller = await BankOptions.CurrentWindow.ShowProgressAsync("Validating PIN Number ", "Please Wait...");
-            controller.SetCancelable(true);
-
-            double i = 0.0;
-            while (i < 6.0)
+            if (String.IsNullOrWhiteSpace(inputPINBox.Password))
             {
-                double val = (i / 100.0) * 20.0;
-                controller.SetProgress(val);
-                if (controller.IsCanceled)
-                    break; //canceled progressdialog auto closes.
-
-                i += 1.0;
-
-                await Task.Delay(1000);
+                inputPINBox.Clear();
+                await BankOptions.CurrentWindow.ShowMessageAsync("Please enter PIN to proceed", "");
             }
-
-            await controller.CloseAsync();
-
-            if (controller.IsCanceled)
+            if (inputPINBox.Password.Length > 0 && inputPINBox.Password.ToString().Length < 4)
             {
-                await BankOptions.CurrentWindow.ShowMessageAsync("Transaction Cancelled", "Going to Home page..");
-                NavigationServiceHelper.Navigate((sender as Button), BankOptions.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
+                inputPINBox.Clear();
+                MessageBox.Show("Please enter all the 4 digits of PIN");
             }
             else
             {
-                this.inputPIN.Visibility = Visibility.Collapsed;
-                Progress += 20;
-                this.bioAuth.Visibility = Visibility.Visible;
+                var controller = await BankOptions.CurrentWindow.ShowProgressAsync("Validating PIN Number ", "Please Wait...");
+                controller.SetCancelable(true);
+
+                bool pinValidateSuccessful = false;
+                try
+                {
+                    string enteredPIN = inputPINBox.Password.ToString();
+                    string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
+                    string queryUri = servicesUri+"&action=VerifyPIN&kioskid=1011&cardno=10001&pin="+enteredPIN;
+                    HttpWebRequest myRequest =
+                      (HttpWebRequest)WebRequest.Create(queryUri);
+                    myRequest.Method = "POST";
+                    myRequest.Accept = "application/json";
+                    using (var resp = (HttpWebResponse)myRequest.GetResponse())
+                    {
+                        //////For PIN, check if the status is 200. If yes, then the validation is successful. No need of below block for PIN
+                        //using (var reader = new StreamReader(resp.GetResponseStream()))
+                        //{
+                        //    string text = reader.ReadToEnd();
+                        //    var jsonDe = JsonConvert.DeserializeObject(text);
+                        //    pinValidateSuccessful = true;
+                        //    await controller.CloseAsync();
+                        //    if (controller.IsCanceled)
+                        //    {
+                        //        await controller.CloseAsync();
+                        //        await BankOptions.CurrentWindow.ShowMessageAsync("Transaction Cancelled", "Going to Home page..");
+                        //        NavigationServiceHelper.Navigate((sender as Button), BankOptions.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
+                        //    }
+                        //}
+                    }
+                }
+                catch(WebException ex)
+                {
+                    if (ex.Message == "The remote server returned an error: (401) Unauthorized.")
+                    {
+                        pinValidateSuccessful = false;
+                    }
+                }
+
+                if(!pinValidateSuccessful)
+                {
+                    await controller.CloseAsync();
+                    if (controller.IsCanceled)
+                    {
+                        await BankOptions.CurrentWindow.ShowMessageAsync("Transaction Cancelled", "Going to Home page..");
+                        NavigationServiceHelper.Navigate((sender as Button), BankOptions.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
+                    }
+                    else
+                    {
+                        await BankOptions.CurrentWindow.ShowMessageAsync("Wrong PIN entered", "Going to Home page");
+                        NavigationServiceHelper.Navigate((sender as Button), BankOptions.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
+                    }
+                }
+                else
+                {
+                    this.inputPIN.Visibility = Visibility.Collapsed;
+                    Progress += 20;
+                    this.bioAuth.Visibility = Visibility.Visible;
+                }
             }
         }
 
@@ -127,7 +174,7 @@ namespace DoyenBiz.BankingKiosk.Views
             this.bioAuth.Visibility = Visibility.Collapsed;
             Progress += 20;
             this.amountToWithdraw.Visibility = Visibility.Visible;
-            
+
         }
 
         private async void btnAmount_Click(object sender, RoutedEventArgs e)
@@ -178,5 +225,10 @@ namespace DoyenBiz.BankingKiosk.Views
                 NavigationServiceHelper.Navigate((sender as Button), BankOptions.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
             }
         }
+    }
+    public class MyObject
+    {
+        public string Id { get; set; }
+        public string Text { get; set; }
     }
 }
