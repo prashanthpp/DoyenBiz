@@ -10,25 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
-using DoyenBiz.BankingKiosk.Utilities;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using MahApps.Metro.Controls.Dialogs;
+using DoyenBiz.BankingKiosk.Utilities;
 using DoyenBiz.BankingKiosk.ViewModels;
 
 namespace DoyenBiz.BankingKiosk.Views
 {
     /// <summary>
-    /// Interaction logic for BankOptions.xaml
+    /// Interaction logic for AmountToWithdraw.xaml
     /// </summary>
-    public partial class BankOptions : MetroWindow
+    public partial class AmountToWithdraw : Flyout
     {
-        public BankOptions()
+        public AmountToWithdraw()
         {
             InitializeComponent();
-            BankOptionsViewModel.CurrentWindow = this;
+            this.DataContext = (new AmountToWithdrawViewModel());
         }
-
     }
 }

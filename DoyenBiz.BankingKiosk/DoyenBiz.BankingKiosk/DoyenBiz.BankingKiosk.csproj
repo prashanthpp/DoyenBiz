@@ -75,8 +75,24 @@
     <Compile Include="Converters\IsLastItemConverter.cs" />
     <Compile Include="Converters\IsProgressedConverter.cs" />
     <Compile Include="Utilities\NavigationServiceHelper.cs" />
+    <Compile Include="ViewModels\AmountToWithdraw.cs" />
+    <Compile Include="ViewModels\BankOptionsViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\BioAuthenticationViewModel.cs" />
+    <Compile Include="ViewModels\PinValidationViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\WithdrawCashViewModel.cs" />
+    <Compile Include="Views\AmountToWithdraw.xaml.cs">
+      <DependentUpon>AmountToWithdraw.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BankOptions.xaml.cs">
       <DependentUpon>BankOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BioAuthenctication.xaml.cs">
+      <DependentUpon>BioAuthenctication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PinValidation.xaml.cs">
+      <DependentUpon>PinValidation.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WithdrawCash.xaml.cs">
       <DependentUpon>WithdrawCash.xaml</DependentUpon>
@@ -97,9 +113,21 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AmountToWithdraw.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\BankOptions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BioAuthenctication.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PinValidation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\WithdrawCash.xaml">
       <SubType>Designer</SubType>
@@ -139,7 +167,6 @@
   <ItemGroup>
     <Folder Include="DataAccess\" />
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Axis.png" />

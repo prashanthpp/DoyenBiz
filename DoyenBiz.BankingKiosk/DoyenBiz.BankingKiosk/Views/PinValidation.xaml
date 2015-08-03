@@ -1,0 +1,48 @@
+﻿<controls:Flyout x:Class="DoyenBiz.BankingKiosk.Views.PinValidation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoyenBiz.BankingKiosk.Views"
+        mc:Ignorable="d"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        BorderBrush="Black"
+        BorderThickness="1"
+        xmlns:kioskControls="clr-namespace:DoyenBiz.BankingKiosk.Controls"
+        
+        >
+    <controls:Flyout.Background>
+        <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
+    </controls:Flyout.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Withdraw Transaction" Grid.Row="0" Style="{StaticResource TitleTextLong}"  Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <kioskControls:KioskProgressBar x:Name="transactionProgressBar" Grid.Row="1" ItemsSource="{Binding Steps}" Foreground="#FF086398" Progress="{Binding Progress}" SnapsToDevicePixels="True" Margin="40"/>
+        <Grid x:Name="inputPIN" Grid.Row="2">
+            <Grid HorizontalAlignment="Center" Margin="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height=".2*"/>
+                    <RowDefinition Height=".5*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Please enter your 4 digit PIN Number</TextBlock>
+                <Grid Grid.Row="1"  Height="50" HorizontalAlignment="Center">
+                    <PasswordBox x:Name="inputPINBox" Width="100" Height="50"
+                             VerticalContentAlignment="Center"
+                             MaxLength="4" 
+                             />
+                    <Button x:Name="validatePINButton" Width="100" Height="50"
+                        BorderThickness="2" 
+                        Style="{StaticResource MetroButton}"
+                        Margin="300,0,0,0" Content="Go"
+                        VerticalAlignment="Center"  Command="{Binding ButtonCommand}" CommandParameter="{Binding Password,ElementName=inputPINBox}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</controls:Flyout>

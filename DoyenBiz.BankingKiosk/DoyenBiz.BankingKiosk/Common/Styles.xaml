@@ -217,6 +217,7 @@
                                             <Style TargetType="Path" x:Key="innerPath" BasedOn="{StaticResource outerPath}">
                                                 <Setter Property="Data" Value="M0.0,0.0 L0.0,0.45 L1.0,0.45 L1.0,0.55 L0.0,0.55 L0.0,1.0"/>
                                                 <Setter Property="Fill" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:KioskProgressBar}}, Path=Foreground}"/>
+                                                <Setter Property="Stroke" Value="Black"/>
                                             </Style>
                                         </DataTemplate.Resources>
                                         <Grid SnapsToDevicePixels="True">
@@ -293,7 +294,7 @@
                                 </ItemsControl.ItemsPanel>
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding}" HorizontalAlignment="Center" Margin="0,5,0,0" FontFamily="Segoe UI" FontSize="20"/>
+                                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding}" HorizontalAlignment="Center" Margin="0,5,0,0" FontFamily="Segoe UI" FontSize="15" Foreground="Black"/>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>

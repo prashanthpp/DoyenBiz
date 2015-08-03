@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoyenBiz.BankingKiosk.Views"
+                      xmlns:viewModels="clr-namespace:DoyenBiz.BankingKiosk.ViewModels"
         mc:Ignorable="d"
         Title="Bank Home" 
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
@@ -21,10 +22,17 @@
         BorderThickness="1"
         xmlns:kioskWindows="clr-namespace:DoyenBiz.BankingKiosk.Views"
         >
+    <Window.DataContext>
+        <viewModels:BankOptionsViewModel/>
+    </Window.DataContext>
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl x:Name="flyoutsControl">
             <kioskWindows:WithdrawCash Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
+            <kioskWindows:PinValidation Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
+            <kioskWindows:BioAuthenctication Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
+            <kioskWindows:AmountToWithdraw Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
         </Controls:FlyoutsControl>
+     
     </Controls:MetroWindow.Flyouts>
 
     <Controls:MetroWindow.Background>
@@ -59,7 +67,8 @@
                 </Style>
             </ListBox.ItemContainerStyle>
             <ListBoxItem>
-                <Button  Style="{StaticResource MetroButton}" Click="WithdrawCash_Click">Withdraw Cash</Button>
+                <Button  Style="{StaticResource MetroButton}" 
+                         Command="{Binding ButtonCommand}" CommandParameter="Withdraw Cash">Withdraw Cash</Button>
             </ListBoxItem>
             <ListBoxItem>
                 <Button Style="{StaticResource MetroButton}">Deposit Cash</Button>
