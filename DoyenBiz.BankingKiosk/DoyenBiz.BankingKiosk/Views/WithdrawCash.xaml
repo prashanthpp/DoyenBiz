@@ -10,8 +10,9 @@
         BorderBrush="Black"
         BorderThickness="1"
         xmlns:kioskControls="clr-namespace:DoyenBiz.BankingKiosk.Controls"
-        
+        xmlns:viewModels="clr-namespace:DoyenBiz.BankingKiosk.ViewModels"
         >
+   
     <controls:Flyout.Background>
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </controls:Flyout.Background>
@@ -35,83 +36,10 @@
                         BorderThickness="2" 
                         Style="{StaticResource MetroButton}"
                         Margin="300,0,0,0" Content="Go"
-                        VerticalAlignment="Center" Click="cardEnteredButton_Click"/>
+                        VerticalAlignment="Center"  Command="{Binding ButtonCommand}" CommandParameter="Card"
+                        />
             </Grid>
         </Grid>
-        <Grid x:Name="inputPIN" Grid.Row="2" Visibility="Collapsed">
-            <Grid HorizontalAlignment="Center" Margin="50">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height=".3*"/>
-                    <RowDefinition Height=".2*"/>
-                    <RowDefinition Height=".5*"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Please enter your 4 digit PIN Number</TextBlock>
-                <Grid Grid.Row="1"  Height="50" HorizontalAlignment="Center">
-                    <PasswordBox x:Name="inputPINBox" Width="100" Height="50"
-                             VerticalContentAlignment="Center"
-                             MaxLength="4"
-                             />
-                    <Button x:Name="validatePINButton" Width="100" Height="50"
-                        BorderThickness="2" 
-                        Style="{StaticResource MetroButton}"
-                        Margin="300,0,0,0" Content="Go"
-                        VerticalAlignment="Center" Click="validatePINButton_Click"/>
-                </Grid>
-            </Grid>
-        </Grid>
-        <Grid x:Name="bioAuth" Grid.Row="2" Visibility="Collapsed">
-            <Grid HorizontalAlignment="Center" Margin="50">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height=".3*"/>
-                    <RowDefinition Height=".7*"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Place your right thumb on the finger print scanner..</TextBlock>
-                <Image Grid.Row="1" Margin="10" Source="/Resources/Images/icici.png" Height="100"></Image>
-                <Button x:Name="btnThumbprint"  Grid.Row="1" Width="100" Height="50"
-                        BorderThickness="2" 
-                        Style="{StaticResource MetroButton}"
-                        Margin="300,0,0,0" Content="Go"
-                        VerticalAlignment="Center" Click="thumbprintButton_Click"/>
-            </Grid>
-        </Grid>
-
-        <Grid x:Name="amountToWithdraw" Grid.Row="2" Visibility="Collapsed">
-            <Grid HorizontalAlignment="Center" Margin="50">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height=".3*"/>
-                    <RowDefinition Height=".3*"/>
-                    <RowDefinition Height=".5*"/>
-                    <RowDefinition Height=".7*"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Place enter amount you would like to withdraw ...</TextBlock>
-                <Grid Grid.Row="1"  Height="50" HorizontalAlignment="Center">
-                    <TextBox x:Name="txtAmount" Width="100" Height="50"
-                             VerticalContentAlignment="Center"
-                             MaxLength="4"
-                             />
-                    <Button x:Name="btnAmount" Width="100" Height="50"
-                        BorderThickness="2" 
-                        Style="{StaticResource MetroButton}"
-                        Margin="300,0,0,0" Content="Go"
-                        VerticalAlignment="Center" Click="btnAmount_Click"/>
-                </Grid>
-                <TextBlock Grid.Row="2" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black" TextAlignment="Left" >Or select Amount ...</TextBlock>
-                <Grid x:Name="bankLogos" Grid.Row="3" Grid.Column="0">
-                    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                        <WrapPanel Width="600">
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,20,20" >INR 100</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,20,20" >INR 500</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,20,20" >INR 1000</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,20,20" >INR 1500</Button>
-
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,20,20" >INR 2000</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,20,20" >INR 2500</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,20,20" >INR 5000</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,20,20" >INR 10000</Button>
-                        </WrapPanel>
-                    </ScrollViewer>
-                </Grid>
-            </Grid>
-        </Grid>
+       
     </Grid>
 </controls:Flyout>
