@@ -115,12 +115,13 @@ namespace DoyenBiz.BankingKiosk.Views
                     myRequest.Accept = "application/json";
                     using (var resp = (HttpWebResponse)myRequest.GetResponse())
                     {
+                        pinValidateSuccessful = true;
+                        await controller.CloseAsync();
                         //////For PIN, check if the status is 200. If yes, then the validation is successful. No need of below block for PIN
                         //using (var reader = new StreamReader(resp.GetResponseStream()))
                         //{
                         //    string text = reader.ReadToEnd();
                         //    var jsonDe = JsonConvert.DeserializeObject(text);
-                        //    pinValidateSuccessful = true;
                         //    await controller.CloseAsync();
                         //    if (controller.IsCanceled)
                         //    {
