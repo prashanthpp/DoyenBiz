@@ -28,13 +28,14 @@ namespace DoyenBiz.BankingKiosk.ViewModels
         {
 
             var enteredPIN = password.ToString();
+            //enteredPIN = "1234";
             if (String.IsNullOrWhiteSpace(enteredPIN))
             {
                 await CurrentWindow.ShowMessageAsync("Please enter PIN to proceed", "");
             }
-            if (enteredPIN.Length > 0 && enteredPIN.ToString().Length < 4)
+            else if (enteredPIN.Length > 0 && enteredPIN.ToString().Length < 4)
             {
-                MessageBox.Show("Please enter all the 4 digits of PIN");
+                await CurrentWindow.ShowMessageAsync("Please enter all the 4 digits of PIN","");
             }
             else
             {
@@ -52,20 +53,10 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                     myRequest.Accept = "application/json";
                     using (var resp = (HttpWebResponse)myRequest.GetResponse())
                     {
-                        //////For PIN, check if the status is 200. If yes, then the validation is successful. No need of below block for PIN
-                        //using (var reader = new StreamReader(resp.GetResponseStream()))
-                        //{
-                        //    string text = reader.ReadToEnd();
-                        //    var jsonDe = JsonConvert.DeserializeObject(text);
-                        //    pinValidateSuccessful = true;
-                        //    await controller.CloseAsync();
-                        //    if (controller.IsCanceled)
-                        //    {
-                        //        await controller.CloseAsync();
-                        //        await BankOptions.CurrentWindow.ShowMessageAsync("Transaction Cancelled", "Going to Home page..");
-                        //        NavigationServiceHelper.Navigate((sender as Button), BankOptions.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
-                        //    }
-                        //}
+                        pinValidateSuccessful = true;
+                        await controller.CloseAsync();
+                        //////For PIN, check if the status is 200. If yes, then the validation is successful.
+                        ////// Waiting for working service method.
                     }
                 }
                 catch (WebException ex)
@@ -94,6 +85,8 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 {
                     //this.inputPIN.Visibility = Visibility.Collapsed;
                     Progress += 20;
+                    ToggleFlyout(2);
+                    await controller.CloseAsync();
                     //this.bioAuth.Visibility = Visibility.Visible;
                 }
             }
