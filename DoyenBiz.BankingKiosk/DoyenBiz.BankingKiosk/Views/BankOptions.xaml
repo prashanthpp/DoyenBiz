@@ -56,7 +56,8 @@
         </Grid>
         <Image Grid.Row="01" Grid.Column="0" HorizontalAlignment="Left" Source="/Resources/Images/icici.png" Margin="20,0,0,0"/>
 
-        <ListBox Margin="50" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Column="0" Grid.Row="2"  Style="{StaticResource contentListBox}" >
+        <ListBox Margin="50" Grid.ColumnSpan="2" x:Name="lstButtons"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Column="0" Grid.Row="2"  Style="{StaticResource contentListBox}" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Vertical"  Background="Transparent" ></StackPanel>
@@ -72,7 +73,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Resources/Images/Rupee.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
                     <Button  Style="{StaticResource MetroButton}" 
-                         Command="{Binding ButtonCommand}" CommandParameter="Withdraw Cash">Withdraw Cash</Button>
+                         Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=lstButtons}">Withdraw Cash</Button>
                 </StackPanel>
              
             </ListBoxItem>

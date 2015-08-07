@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Controls;
 
 namespace DoyenBiz.BankingKiosk.ViewModels
 {
@@ -15,6 +16,10 @@ namespace DoyenBiz.BankingKiosk.ViewModels
         public void WithdrawCash_Click(object obj)
         {
             ToggleFlyout(0);
+            if(obj!=null)
+            { 
+            ((ListBox)obj).HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+            }
         }
 
     }
