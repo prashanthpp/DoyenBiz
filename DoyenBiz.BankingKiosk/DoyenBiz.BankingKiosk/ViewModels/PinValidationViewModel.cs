@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Input;
-using System.Windows;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using MahApps.Metro.Controls;
-using System.Threading.Tasks;
 using DoyenBiz.BankingKiosk.Utilities;
 using MahApps.Metro.Controls.Dialogs;
 using System.Configuration;

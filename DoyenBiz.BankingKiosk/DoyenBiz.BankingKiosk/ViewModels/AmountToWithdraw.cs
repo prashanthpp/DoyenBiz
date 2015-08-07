@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using MahApps.Metro.Controls.Dialogs;
 using DoyenBiz.BankingKiosk.Utilities;
-using System.Windows.Controls;
 using System.Configuration;
 using System.Net;
 using Newtonsoft.Json;
