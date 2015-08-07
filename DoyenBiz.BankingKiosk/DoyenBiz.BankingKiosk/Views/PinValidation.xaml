@@ -33,14 +33,15 @@
                 <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Please enter your 4 digit PIN Number</TextBlock>
                 <Grid Grid.Row="1"  Height="50" HorizontalAlignment="Center">
                     <PasswordBox x:Name="inputPINBox" Width="100" Height="50"
-                             VerticalContentAlignment="Center"
-                             MaxLength="4" 
+                             VerticalContentAlignment="Center" 
+                             MaxLength="4"
                              />
+                   
                     <Button x:Name="validatePINButton" Width="100" Height="50"
                         BorderThickness="2" 
                         Style="{StaticResource MetroButton}"
                         Margin="300,0,0,0" Content="Go"
-                        VerticalAlignment="Center"  Command="{Binding ButtonCommand}" CommandParameter="{Binding Password,ElementName=inputPINBox}"/>
+                        VerticalAlignment="Center"  Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=inputPINBox}"/>
                 </Grid>
             </Grid>
         </Grid>

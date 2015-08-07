@@ -12,6 +12,7 @@ using DoyenBiz.BankingKiosk.Utilities;
 using MahApps.Metro.Controls.Dialogs;
 using System.Configuration;
 using System.Net;
+using System.Windows.Controls;
 
 namespace DoyenBiz.BankingKiosk.ViewModels
 {
@@ -24,11 +25,12 @@ namespace DoyenBiz.BankingKiosk.ViewModels
 
         }
 
-        public async void validatePINButton_Click(object password)
+   
+        public async void validatePINButton_Click(object inputBox)
         {
-
-            var enteredPIN = password.ToString();
-            //enteredPIN = "1234";
+            var enteredPIN = string.Empty;
+            if (inputBox != null && inputBox is PasswordBox)
+                enteredPIN = ((PasswordBox)inputBox).Password;
             if (String.IsNullOrWhiteSpace(enteredPIN))
             {
                 await CurrentWindow.ShowMessageAsync("Please enter PIN to proceed", "");
