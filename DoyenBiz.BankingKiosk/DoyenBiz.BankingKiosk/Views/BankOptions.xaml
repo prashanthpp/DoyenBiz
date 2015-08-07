@@ -70,7 +70,7 @@
             </ListBox.ItemContainerStyle>
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
+                    <Image Source="/Resources/Images/Rupee.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
                     <Button  Style="{StaticResource MetroButton}" 
                          Command="{Binding ButtonCommand}" CommandParameter="Withdraw Cash">Withdraw Cash</Button>
                 </StackPanel>
@@ -78,21 +78,21 @@
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
+                    <Image Source="/Resources/Images/Payments.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
 
                     <Button Style="{StaticResource MetroButton}">Deposit Cash</Button>
                 </StackPanel>
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
+                    <Image Source="/Resources/Images/Cheque-02.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
 
                     <Button Style="{StaticResource MetroButton}">Deposit Cheque</Button>
                 </StackPanel>
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
+                    <Image Source="/Resources/Images/Chart-Printing.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
 
                     <Button Style="{StaticResource MetroButton}">Print Mini Statement</Button>
                 </StackPanel>
