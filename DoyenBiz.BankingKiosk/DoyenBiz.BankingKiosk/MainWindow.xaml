@@ -33,10 +33,14 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Resources/Images/Hand-Sign-11.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
             <Label Content="Welcome! Please tap on your Bank ..." Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            </StackPanel>
         </Grid>
-        
+        <Image x:Name="companyLogo" Grid.Column="1" Source="/Resources/Images/icici.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+
+
         <Grid x:Name="bankLogos" Grid.Row="1" Grid.Column="0">
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
             <WrapPanel>
