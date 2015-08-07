@@ -60,7 +60,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                         pinValidateSuccessful = false;
                     }
                 }
-                pinValidateSuccessful = true;
+                pinValidateSuccessful = true; //remove this line of code once the VerifyPIN method is fixed
                 if (!pinValidateSuccessful)
                 {
                     await controller.CloseAsync();

@@ -72,7 +72,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 var controller = await CurrentWindow.ShowProgressAsync("Processing your Transaction... ", "Please Wait...");
                 controller.SetCancelable(true);
 
-                bool amtWithdrawSuccessful = false;
+                bool tranSuccess = false;
                 try
                 {
                     string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
@@ -89,36 +89,36 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                             var jsonDe = JsonConvert.DeserializeObject(text);
                             JObject jOb = (JObject)jsonDe;
                             string transactionID = jOb["TransactionID"].ToString();
-                            amtWithdrawSuccessful = true;
                             await controller.CloseAsync();
 
                             //Write the service calls to get the status of the transaction
-                            Transaction_InProgress(transactionID);
+                            tranSuccess = await Transaction_InProgress(transactionID);
 
-                            Transaction_Completed(obj);
+                            if(tranSuccess)
+                                await Transaction_Completed(obj);
+                            else
+                            {
+                                await CurrentWindow.ShowMessageAsync("Transaction Failed", "Going to Home page..");
+                                NavigationServiceHelper.Navigate(enteredAmount, CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
+                            }
+
                             if (controller.IsCanceled)
                             {
-                                await controller.CloseAsync();
-                                Transaction_Cancelled(obj);
-                                await CurrentWindow.ShowMessageAsync("Transaction Cancelled", "Going to Home page..");
-                                NavigationServiceHelper.Navigate(enteredAmount, CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
+                                tranSuccess = false;
                             }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    amtWithdrawSuccessful = false;
+                    tranSuccess = false;
                 }
 
-                if (!amtWithdrawSuccessful)
+                if (!tranSuccess)
                 {
-                    await controller.CloseAsync();
                     if (controller.IsCanceled)
                     {
-                        Transaction_Cancelled(obj);
-                        await CurrentWindow.ShowMessageAsync("Transaction Cancelled", "Going to Home page..");
-                        NavigationServiceHelper.Navigate(enteredAmount, CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
+                        await Transaction_Cancelled(obj);
                     }
                     else
                     {
@@ -129,16 +129,13 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 else
                 {
                     await Task.Delay(1000);
-                    //this.inputPIN.Visibility = Visibility.Collapsed;
                     Progress += 20;
-                    await controller.CloseAsync();
-                    //this.bioAuth.Visibility = Visibility.Visible;
                 }
             }
         }
 
 
-        private async void Transaction_Completed(object sender)
+        private async Task Transaction_Completed(object sender)
         {
             Progress += 100;
             var mySettings = new MetroDialogSettings()
@@ -147,7 +144,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 ColorScheme = CurrentWindow.MetroDialogOptions.ColorScheme
             };
 
-            MessageDialogResult result = await CurrentWindow.ShowMessageAsync("Your Transaction is approved by  Account Holder ... Please Collect Cash", "",
+            MessageDialogResult result = await CurrentWindow.ShowMessageAsync("Your Transaction is approved by  Account Holder ...", "Please Collect Cash...",
                 MessageDialogStyle.Affirmative, mySettings);
 
             if (result == MessageDialogResult.Affirmative)
@@ -156,40 +153,76 @@ namespace DoyenBiz.BankingKiosk.ViewModels
             }
         }
 
-        private async void Transaction_InProgress(string transactionId)
+        private async Task<bool> Transaction_InProgress(string transactionId)
         {
-            var mySettings = new MetroDialogSettings()
+            var controllerInProgress = await CurrentWindow.ShowProgressAsync("Completing two-factor Biometric Authentication...", "Verifying transaction with the Account holder...");
+            controllerInProgress.SetCancelable(true);
+
+            string transactionStatus;
+            int i = 0;//comment or remove this once the service is implemented to give the success message.
+            do
             {
-                AffirmativeButtonText = "Cancel Transaction",
-                ColorScheme = CurrentWindow.MetroDialogOptions.ColorScheme
-            };
+                await Task.Delay(300);
+                //logic to call the Verify Transaction service here... and break once we receive the success message
+                try
+                {
+                    string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
+                    string queryUri = servicesUri + "&action=GetTransactionStatus&kioskid=101&transactionid=" + transactionId;
+                    HttpWebRequest myRequest =
+                      (HttpWebRequest)WebRequest.Create(queryUri);
+                    myRequest.Method = "POST";
+                    myRequest.Accept = "application/json";
+                    using (var resp = (HttpWebResponse)myRequest.GetResponse())
+                    {
+                        using (var reader = new StreamReader(resp.GetResponseStream()))
+                        {
+                            string text = reader.ReadToEnd();
+                            var jsonDe = JsonConvert.DeserializeObject(text);
+                            JObject jOb = (JObject)jsonDe;
+                            transactionStatus = jOb["TransactionStatus"].ToString();
+                            
+                            #region comment this region once the service is ready to give success message
+                            i++;
+                            if (i == 10)
+                            {
+                                await controllerInProgress.CloseAsync();
+                                return true;
+                            }
+                            #endregion
 
-            MessageDialogResult result = await CurrentWindow.ShowMessageAsync("Completing two-factor Biometric Authentication...", "Verifying transaction with the Account holder...",
-                MessageDialogStyle.Affirmative, mySettings);
+                            if (transactionStatus.ToLower() == "success")
+                            {
+                                await controllerInProgress.CloseAsync();
+                                return true;
+                            }
 
-            //do
-            //{
-            //    //logic to call the Verify Transaction service here... and break once we receive the final message
-                
-            //    await Task.Delay(1000);
-            //} while (true);
+                            if (controllerInProgress.IsCanceled)
+                            {
+                                await controllerInProgress.CloseAsync();
+                                await Transaction_Cancelled(transactionId);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            } while (transactionStatus.ToLower() != "success");
 
-            if (result == MessageDialogResult.Affirmative)
-            {
-                NavigationServiceHelper.Navigate((transactionId as string), CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
-            }
+            return false;
         }
 
-        private async void Transaction_Cancelled(object sender)
+        private async Task Transaction_Cancelled(object sender)
         {
             Progress += 100;
             var mySettings = new MetroDialogSettings()
             {
-                AffirmativeButtonText = "I Collected Cash",
+                AffirmativeButtonText = "OK",
                 ColorScheme = CurrentWindow.MetroDialogOptions.ColorScheme
             };
 
-            MessageDialogResult result = await CurrentWindow.ShowMessageAsync("Your Transaction is approved by  Account Holder ... Please Collect Cash", "",
+            MessageDialogResult result = await CurrentWindow.ShowMessageAsync("Your Transaction is Cancelled...", "",
                 MessageDialogStyle.Affirmative, mySettings);
 
             if (result == MessageDialogResult.Affirmative)
