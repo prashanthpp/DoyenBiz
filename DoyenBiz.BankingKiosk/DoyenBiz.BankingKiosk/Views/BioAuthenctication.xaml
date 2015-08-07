@@ -21,7 +21,10 @@
             <RowDefinition Height=".2*"/>
             <RowDefinition Height=".7*"/>
         </Grid.RowDefinitions>
-        <Label Content="Withdraw Transaction" Grid.Row="0" Style="{StaticResource TitleTextLong}"  Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" >
+            <Image Source="/Resources/Images/Hand-Sign-11.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
+            <Label Content="Withdraw Transaction" Grid.Row="0" Style="{StaticResource TitleTextLong}"  Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </StackPanel>
         <kioskControls:KioskProgressBar x:Name="transactionProgressBar" Grid.Row="1" ItemsSource="{Binding Steps}" Foreground="#FF086398" Progress="{Binding Progress}" SnapsToDevicePixels="True" Margin="40"/>
         <Grid x:Name="bioAuth" Grid.Row="2">
             <Grid HorizontalAlignment="Center" Margin="50">
@@ -29,8 +32,8 @@
                     <RowDefinition Height=".3*"/>
                     <RowDefinition Height=".7*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Place your right thumb on the finger print scanner..</TextBlock>
-                <Image Grid.Row="1" Margin="10" Source="/Resources/Images/icici.png" Height="100"></Image>
+                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Please place your registered thumb impression finger on the Finger print scanner ....</TextBlock>
+                <Image Grid.Row="1" Margin="10" Source="/Resources/Images/Touch-Screen.png" Height="100"></Image>
                 <Button x:Name="btnThumbprint"  Grid.Row="1" Width="100" Height="50"
                         BorderThickness="2" 
                         Style="{StaticResource MetroButton}"

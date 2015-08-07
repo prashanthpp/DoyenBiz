@@ -22,7 +22,10 @@
             <RowDefinition Height=".2*"/>
             <RowDefinition Height=".7*"/>
         </Grid.RowDefinitions>
-        <Label Content="Withdraw Transaction" Grid.Row="0" Style="{StaticResource TitleTextLong}"  Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" >
+            <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
+            <Label Content="Withdraw Transaction" Grid.Row="0" Style="{StaticResource TitleTextLong}"  Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </StackPanel>
         <kioskControls:KioskProgressBar x:Name="transactionProgressBar" Grid.Row="1" ItemsSource="{Binding Steps}" Foreground="#FF086398" Progress="{Binding Progress}" SnapsToDevicePixels="True" Margin="40"/>
         <Grid x:Name="swipeCard" Grid.Row="2" Visibility="Visible">
             <Grid HorizontalAlignment="Center" Margin="50">
@@ -30,8 +33,8 @@
                     <RowDefinition Height=".3*"/>
                     <RowDefinition Height=".7*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black" >Please Swipe your Bank Credit/Debit Card to Continue...</TextBlock>
-                <Image Grid.Row="1" Margin="10" Source="/Resources/Images/icici.png" Height="100"></Image>
+                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black" >Please Swipe your Axis Bank Credit/Debit Card to Continue...</TextBlock>
+                <Image Grid.Row="1" Margin="10" Source="/Resources/Images/ATM-02.png" Height="100"></Image>
                 <Button x:Name="cardEnteredButton" Grid.Row="1" Width="100" Height="50"
                         BorderThickness="2" 
                         Style="{StaticResource MetroButton}"

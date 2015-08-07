@@ -49,12 +49,14 @@
             <RowDefinition Height=".8*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-            <Label Content="Select your Transaction" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
+            <Label Content="Tap on the Transaction you would like to complete.." Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </StackPanel>
         </Grid>
         <Image Grid.Row="01" Grid.Column="0" HorizontalAlignment="Left" Source="/Resources/Images/icici.png" Margin="20,0,0,0"/>
 
-        <ListBox Margin="50" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Column="0" Grid.Row="2"  Style="{StaticResource contentListBox}" >
+        <ListBox Margin="50" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Column="0" Grid.Row="2"  Style="{StaticResource contentListBox}" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Vertical"  Background="Transparent" ></StackPanel>
@@ -67,35 +69,35 @@
                 </Style>
             </ListBox.ItemContainerStyle>
             <ListBoxItem>
-                <Button  Style="{StaticResource MetroButton}" 
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Images/Rupee.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
+                    <Button  Style="{StaticResource MetroButton}" 
                          Command="{Binding ButtonCommand}" CommandParameter="Withdraw Cash">Withdraw Cash</Button>
+                </StackPanel>
+             
             </ListBoxItem>
             <ListBoxItem>
-                <Button Style="{StaticResource MetroButton}">Deposit Cash</Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Images/Payments.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
+
+                    <Button Style="{StaticResource MetroButton}">Deposit Cash</Button>
+                </StackPanel>
             </ListBoxItem>
             <ListBoxItem>
-                <Button Style="{StaticResource MetroButton}">Deposit Cheque</Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Images/Cheque-02.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
+
+                    <Button Style="{StaticResource MetroButton}">Deposit Cheque</Button>
+                </StackPanel>
             </ListBoxItem>
             <ListBoxItem>
-                <Button Style="{StaticResource MetroButton}">Print Mini Statement</Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Images/Chart-Printing.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource buttonLogoImage}"/>
+
+                    <Button Style="{StaticResource MetroButton}">Print Mini Statement</Button>
+                </StackPanel>
             </ListBoxItem>
         </ListBox>
-        <Grid x:Name="rightStaticText" Grid.Row="2" Grid.Column="1">
-            <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
-                    <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}">
-                This ATM uses a two-factor Biometric Authentication to check you are the account holder. By continuing to use the ATM services, you agree to provide you finger print and you agree to have your picture taken
-                    <LineBreak/>
-                    <LineBreak/>
-                 If your picture of finger print does not match the Account Holder's Biometric File, we will send a verification SMS to the Account Holder to authorize the transaction
-                    <LineBreak/>
-                    <LineBreak/>
-                 For any help or support needed to use the KIOSK, please call us on 1-800-CITIZEN-KIOSK.
-
-                    </TextBlock>
-                </ScrollViewer>
-            </Border>
-         </Grid>
     </Grid>
     <!--<KioskWindows:WithdrawCash />-->
 </Controls:MetroWindow>
