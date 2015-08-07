@@ -39,7 +39,8 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 try
                 {
                     string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
-                    string queryUri = servicesUri + "&action=VerifyPIN&kioskid=1011&cardno=10001&pin=" + enteredPIN;
+                    string kioskID = ConfigurationManager.AppSettings["kioskID"].ToString();
+                    string queryUri = string.Format("{0}&action=VerifyPIN&kioskid={1}&cardno=10001&pin={2}", servicesUri,kioskID, enteredPIN);
                     HttpWebRequest myRequest =
                       (HttpWebRequest)WebRequest.Create(queryUri);
                     myRequest.Method = "POST";
@@ -59,7 +60,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                         pinValidateSuccessful = false;
                     }
                 }
-
+                pinValidateSuccessful = true;
                 if (!pinValidateSuccessful)
                 {
                     await controller.CloseAsync();

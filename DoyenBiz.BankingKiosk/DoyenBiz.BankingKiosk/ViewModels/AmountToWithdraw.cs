@@ -9,23 +9,56 @@ using System.Net;
 using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using System.Windows.Input;
 
 namespace DoyenBiz.BankingKiosk.ViewModels
 {
     class AmountToWithdrawViewModel : BaseViewModel
     {
 
+        private ICommand m_AmountButtonCommand;
+        private string selectedAmount;
+
+        public ICommand AmountChangeCommand
+        {
+            get
+            {
+                return m_AmountButtonCommand;
+            }
+            set
+            {
+                m_AmountButtonCommand = value;
+            }
+        }
+
+
+        public string SelectedAmount
+        {
+            get { return selectedAmount; }
+            set
+            {
+                selectedAmount = value;
+                OnPropertyChanged("SelectedAmount");
+            }
+        }
+
         public AmountToWithdrawViewModel()
         {
             ButtonCommand = new RelayCommand(new Action<object>(btnAmount_Click));
+            AmountChangeCommand = new RelayCommand(new Action<object>(btnAmountChange_Click));
             Progress += 80;
 
+        }
+
+
+        public async void btnAmountChange_Click(object amountSelected)
+        {
+            SelectedAmount = amountSelected.ToString();
         }
 
         public async void btnAmount_Click(object obj)
         {
             var enteredAmount = obj.ToString();
-            //enteredAmount = "100";
             if (obj == null || String.IsNullOrWhiteSpace(obj.ToString()))
             {
                 await CurrentWindow.ShowMessageAsync("Please enter amount to withdraw", "");

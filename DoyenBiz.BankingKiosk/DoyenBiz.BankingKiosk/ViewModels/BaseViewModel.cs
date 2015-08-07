@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace DoyenBiz.BankingKiosk.ViewModels
 {
-    public class BaseViewModel
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public static MetroWindow CurrentWindow;
 
