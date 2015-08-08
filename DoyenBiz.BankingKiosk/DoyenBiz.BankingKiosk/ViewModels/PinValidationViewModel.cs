@@ -4,6 +4,7 @@ using MahApps.Metro.Controls.Dialogs;
 using System.Configuration;
 using System.Net;
 using System.Windows.Controls;
+using System.Threading.Tasks;
 
 namespace DoyenBiz.BankingKiosk.ViewModels
 {
@@ -38,17 +39,22 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 bool pinValidateSuccessful = false;
                 try
                 {
+                    await Task.Delay(1000);
                     string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
                     string kioskID = ConfigurationManager.AppSettings["kioskID"].ToString();
-                    string queryUri = string.Format("{0}&action=VerifyPIN&kioskid={1}&cardno=10001&pin={2}", servicesUri,kioskID, enteredPIN);
+                    string cardNo = ConfigurationManager.AppSettings["cardNumber"].ToString();
+                    string queryUri = string.Format("{0}?service=BankingServices&action=VerifyPIN&kioskid={1}&cardno={3}&pin={2}", servicesUri,kioskID, enteredPIN,cardNo);
                     HttpWebRequest myRequest =
                       (HttpWebRequest)WebRequest.Create(queryUri);
                     myRequest.Method = "POST";
                     myRequest.Accept = "application/json";
                     using (var resp = (HttpWebResponse)myRequest.GetResponse())
                     {
-                        pinValidateSuccessful = true;
-                        await controller.CloseAsync();
+                        if (resp.StatusCode == HttpStatusCode.OK)
+                        {
+                            pinValidateSuccessful = true;
+                            await controller.CloseAsync();
+                        }
                         //////For PIN, check if the status is 200. If yes, then the validation is successful.
                         ////// Waiting for working service method.
                     }
@@ -60,7 +66,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                         pinValidateSuccessful = false;
                     }
                 }
-                pinValidateSuccessful = true; //remove this line of code once the VerifyPIN method is fixed
+                //pinValidateSuccessful = true; //remove this line of code once the VerifyPIN method is fixed
                 if (!pinValidateSuccessful)
                 {
                     await controller.CloseAsync();
@@ -80,7 +86,6 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                     //this.inputPIN.Visibility = Visibility.Collapsed;
                     Progress += 20;
                     ToggleFlyout(2);
-                    await controller.CloseAsync();
                     //this.bioAuth.Visibility = Visibility.Visible;
                 }
             }

@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Windows.Input;
+using System.Text;
 
 namespace DoyenBiz.BankingKiosk.ViewModels
 {
@@ -71,16 +72,31 @@ namespace DoyenBiz.BankingKiosk.ViewModels
             {
                 var controller = await CurrentWindow.ShowProgressAsync("Processing your Transaction... ", "Please Wait...");
                 controller.SetCancelable(true);
+                await Task.Delay(500);
 
                 bool tranSuccess = false;
                 try
                 {
                     string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
-                    string queryUri = servicesUri + "&action=VerifyTransaction&kioskid=101&cardno=10001&pin=1234&amount=" + enteredAmount;
+
+                    string imageToSend = ImageConverter.EncodeInHTML(ImageConverter.ConvertToBase64(ConfigurationManager.AppSettings["imageToSendPath"]));
+                    string cardNo = ConfigurationManager.AppSettings["cardNumber"].ToString();
+
+                    string queryUri = "service=BankingServices&action=VerifyTransaction&kioskid=101&cardno="+cardNo +"&pin=1234&amount=" + enteredAmount + "&image=" + imageToSend;
                     HttpWebRequest myRequest =
-                      (HttpWebRequest)WebRequest.Create(queryUri);
+                      (HttpWebRequest)WebRequest.Create(servicesUri);
+                   
                     myRequest.Method = "POST";
-                    myRequest.Accept = "application/json";
+                    myRequest.ContentType = "application/x-www-form-urlencoded";
+
+                    ASCIIEncoding encoding = new ASCIIEncoding();
+                    byte[] byte1 = encoding.GetBytes(queryUri);
+                    myRequest.ContentLength = byte1.Length;
+
+                    Stream newStream = myRequest.GetRequestStream();
+
+                    newStream.Write(byte1, 0, byte1.Length);
+
                     using (var resp = (HttpWebResponse)myRequest.GetResponse())
                     {
                         using (var reader = new StreamReader(resp.GetResponseStream()))
@@ -162,12 +178,12 @@ namespace DoyenBiz.BankingKiosk.ViewModels
             int i = 0;//comment or remove this once the service is implemented to give the success message.
             do
             {
-                await Task.Delay(300);
+                await Task.Delay(1000);
                 //logic to call the Verify Transaction service here... and break once we receive the success message
                 try
                 {
                     string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
-                    string queryUri = servicesUri + "&action=GetTransactionStatus&kioskid=101&transactionid=" + transactionId;
+                    string queryUri = servicesUri + "?service=BankingServices&action=GetTransactionStatus&kioskid=101&transactionid=" + transactionId;
                     HttpWebRequest myRequest =
                       (HttpWebRequest)WebRequest.Create(queryUri);
                     myRequest.Method = "POST";
@@ -180,7 +196,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                             var jsonDe = JsonConvert.DeserializeObject(text);
                             JObject jOb = (JObject)jsonDe;
                             transactionStatus = jOb["TransactionStatus"].ToString();
-                            
+
                             #region comment this region once the service is ready to give success message
                             i++;
                             if (i == 10)
@@ -190,7 +206,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                             }
                             #endregion
 
-                            if (transactionStatus.ToLower() == "success")
+                            if (transactionStatus.ToLower() == "approved")
                             {
                                 await controllerInProgress.CloseAsync();
                                 return true;
@@ -208,7 +224,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 {
                     return false;
                 }
-            } while (transactionStatus.ToLower() != "success");
+            } while (transactionStatus.ToLower() != "approved");
 
             return false;
         }
