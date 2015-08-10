@@ -32,7 +32,7 @@
             <kioskWindows:BioAuthenctication Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
             <kioskWindows:AmountToWithdraw Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
         </Controls:FlyoutsControl>
-     
+
     </Controls:MetroWindow.Flyouts>
 
     <Controls:MetroWindow.Background>
@@ -50,8 +50,8 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal">
-                <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
-            <Label Content="Tap on the Transaction you would like to complete.." Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}" Height="75" Width="75"/>
+                <Label Content="Tap on the Transaction you would like to complete.." Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             </StackPanel>
         </Grid>
         <Image Grid.Row="01" Grid.Column="0" HorizontalAlignment="Left" Source="/Resources/Images/icici.png" Margin="20,0,0,0"/>
@@ -75,7 +75,7 @@
                     <Button  Style="{StaticResource MetroButton}" 
                          Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=lstButtons}">Withdraw Cash</Button>
                 </StackPanel>
-             
+
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">

@@ -34,11 +34,11 @@
                     <RowDefinition Height=".7*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black" >Please Swipe your Axis Bank Credit/Debit Card to Continue...</TextBlock>
-                <Image Grid.Row="1" Margin="10" Source="/Resources/Images/ATM-02.png" Height="100"></Image>
+                <Image Grid.Row="1" Margin="10" Source="/Resources/Images/ATM-02.png" Height="150" Width="150"></Image>
                 <Button x:Name="cardEnteredButton" Grid.Row="1" Width="100" Height="50"
                         BorderThickness="2" 
                         Style="{StaticResource MetroButton}"
-                        Margin="300,0,0,0" Content="Go"
+                        Margin="300,5,0,0" Content="Go"
                         VerticalAlignment="Center"  Command="{Binding ButtonCommand}" CommandParameter="Card"
                         />
             </Grid>

@@ -55,8 +55,6 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                             pinValidateSuccessful = true;
                             await controller.CloseAsync();
                         }
-                        //////For PIN, check if the status is 200. If yes, then the validation is successful.
-                        ////// Waiting for working service method.
                     }
                 }
                 catch (WebException ex)
