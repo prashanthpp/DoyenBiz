@@ -52,15 +52,15 @@
                     <StackPanel Width="400" Height="500" HorizontalAlignment="Center" VerticalAlignment="Top" >
                         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Disabled">
                             <WrapPanel>
-                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="7" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="7" />
-                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="8" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="8"/>
-                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="9" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="9"/>
-                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="4" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="4"/>
-                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="5" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="5"/>
-                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="6" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="6"/>
                                 <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="1" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="1"/>
                                 <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="2" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="2"/>
                                 <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="3" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="3"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="4" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="4"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="5" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="5"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="6" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="6"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="7" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="7" />
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="8" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="8"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="9" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="9"/>
                                 <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="0" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="0"/>
                                 <Button Width="220" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="backspace" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="backspace"/>
                             </WrapPanel>
@@ -71,15 +71,15 @@
                 <Grid x:Name="bankLogos" Grid.Row="4" Grid.Column="0" VerticalAlignment="Top">
                     <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Disabled">
                         <WrapPanel Width="600">
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,20,20" Command="{Binding AmountChangeCommand}" CommandParameter="100">INR 100</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,20,20" Command="{Binding AmountChangeCommand}" CommandParameter="500">INR 500</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,20,20" Command="{Binding AmountChangeCommand}" CommandParameter="1000">INR 1000</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,20,20" Command="{Binding AmountChangeCommand}" CommandParameter="1500">INR 1500</Button>
+                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,10,20" Command="{Binding AmountChangeCommand}" CommandParameter="100">INR 100</Button>
+                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,10,20" Command="{Binding AmountChangeCommand}" CommandParameter="500">INR 500</Button>
+                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,10,20" Command="{Binding AmountChangeCommand}" CommandParameter="1000">INR 1000</Button>
+                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,20,10,20" Command="{Binding AmountChangeCommand}" CommandParameter="1500">INR 1500</Button>
 
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,20,30" Command="{Binding AmountChangeCommand}" CommandParameter="2000">INR 2000</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,20,30" Command="{Binding AmountChangeCommand}" CommandParameter="2500">INR 2500</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,20,30" Command="{Binding AmountChangeCommand}" CommandParameter="5000">INR 5000</Button>
-                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,20,30" Command="{Binding AmountChangeCommand}" CommandParameter="10000">INR 10000</Button>
+                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,10,30" Command="{Binding AmountChangeCommand}" CommandParameter="2000">INR 2000</Button>
+                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,10,30" Command="{Binding AmountChangeCommand}" CommandParameter="2500">INR 2500</Button>
+                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,10,30" Command="{Binding AmountChangeCommand}" CommandParameter="5000">INR 5000</Button>
+                            <Button  Style="{StaticResource MetroButtonSmall}" Margin="20,10,10,30" Command="{Binding AmountChangeCommand}" CommandParameter="10000">INR 10000</Button>
                         </WrapPanel>
                     </ScrollViewer>
                 </Grid>
