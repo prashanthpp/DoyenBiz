@@ -188,7 +188,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 ColorScheme = CurrentWindow.MetroDialogOptions.ColorScheme
             };
 
-            MessageDialogResult result = await CurrentWindow.ShowMessageAsync("Your Transaction is approved by  Account Holder ...", "Please Collect Cash...",
+            MessageDialogResult result = await CurrentWindow.ShowMessageAsync("Your Transaction is Approved...", "Please Collect Cash...",
                 MessageDialogStyle.Affirmative, mySettings);
 
             if (result == MessageDialogResult.Affirmative)
