@@ -13,7 +13,11 @@ namespace DoyenBiz.BankingKiosk.Views
         public PinValidation()
         {
             InitializeComponent();
-            this.DataContext = (new PinValidationViewModel());
+            var viewModel = (new PinValidationViewModel());
+            viewModel.InputBox = this.inputPINBox;
+            this.DataContext = viewModel;
+            inputPINBox.Focus();
         }
+
     }
 }

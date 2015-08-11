@@ -21,6 +21,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
 
         private ICommand m_AmountButtonCommand;
         private string selectedAmount;
+        private ICommand m_KeyButtonCommand;
 
         public ICommand AmountChangeCommand
         {
@@ -34,6 +35,18 @@ namespace DoyenBiz.BankingKiosk.ViewModels
             }
         }
 
+
+        public ICommand KeyButtonCommand
+        {
+            get
+            {
+                return m_KeyButtonCommand;
+            }
+            set
+            {
+                m_KeyButtonCommand = value;
+            }
+        }
 
         public string SelectedAmount
         {
@@ -49,6 +62,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
         {
             ButtonCommand = new RelayCommand(new Action<object>(btnAmount_Click));
             AmountChangeCommand = new RelayCommand(new Action<object>(btnAmountChange_Click));
+            KeyButtonCommand = new RelayCommand(new Action<object>(KeyButtonCommand_Click));
             Progress += 80;
 
         }
@@ -58,7 +72,19 @@ namespace DoyenBiz.BankingKiosk.ViewModels
         {
             SelectedAmount = amountSelected.ToString();
         }
+        public async void KeyButtonCommand_Click(object inputBoxValue)
+        {
+            if (inputBoxValue.ToString() != "backspace")
+                SelectedAmount = SelectedAmount + inputBoxValue.ToString();
+            else
+            {
+                if (!string.IsNullOrEmpty(SelectedAmount))
+                {
+                    SelectedAmount = SelectedAmount.Remove(SelectedAmount.Length - 1, 1);
+                }
+            }
 
+        }
         public async void btnAmount_Click(object obj)
         {
             var enteredAmount = obj.ToString();

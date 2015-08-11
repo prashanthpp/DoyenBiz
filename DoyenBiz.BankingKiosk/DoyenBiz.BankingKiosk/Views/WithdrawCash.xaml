@@ -11,6 +11,7 @@
         BorderThickness="1"
         xmlns:kioskControls="clr-namespace:DoyenBiz.BankingKiosk.Controls"
         xmlns:viewModels="clr-namespace:DoyenBiz.BankingKiosk.ViewModels"
+               MaxWidth="950"
         >
    
     <controls:Flyout.Background>

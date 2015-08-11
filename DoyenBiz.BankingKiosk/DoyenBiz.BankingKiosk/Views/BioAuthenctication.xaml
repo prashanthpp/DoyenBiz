@@ -10,7 +10,7 @@
         BorderBrush="Black"
         BorderThickness="1"
         xmlns:kioskControls="clr-namespace:DoyenBiz.BankingKiosk.Controls"
-        
+          MaxWidth="950" Width="900"
         >
     <controls:Flyout.Background>
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>

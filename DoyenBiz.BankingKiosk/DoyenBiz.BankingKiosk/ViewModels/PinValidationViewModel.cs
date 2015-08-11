@@ -5,19 +5,55 @@ using System.Configuration;
 using System.Net;
 using System.Windows.Controls;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace DoyenBiz.BankingKiosk.ViewModels
 {
     class PinValidationViewModel:BaseViewModel
-    { 
-    public PinValidationViewModel()
     {
-        ButtonCommand = new RelayCommand(new Action<object>(validatePINButton_Click));
+
+        private ICommand m_KeyButtonCommand;
+
+        public ICommand KeyButtonCommand
+        {
+            get
+            {
+                return m_KeyButtonCommand;
+            }
+            set
+            {
+                m_KeyButtonCommand = value;
+            }
+        }
+
+        public PasswordBox InputBox
+        {
+            get;
+            set;
+        }
+
+        public PinValidationViewModel()
+         {
+            ButtonCommand = new RelayCommand(new Action<object>(validatePINButton_Click));
+            KeyButtonCommand = new RelayCommand(new Action<object>(KeyButtonCommand_Click));
             Progress += 40;
 
         }
 
-   
+
+        public async void KeyButtonCommand_Click(object inputBoxValue)
+        {
+            if (inputBoxValue.ToString() != "backspace")
+                InputBox.Password = InputBox.Password + inputBoxValue.ToString();
+            else
+            {
+                if (!string.IsNullOrEmpty(InputBox.Password))
+                {
+                    InputBox.Password = InputBox.Password.Remove(InputBox.Password.Length - 1, 1);
+                }
+            }
+
+        }
         public async void validatePINButton_Click(object inputBox)
         {
             var enteredPIN = string.Empty;

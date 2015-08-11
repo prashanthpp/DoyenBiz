@@ -76,6 +76,7 @@
     <Compile Include="Controls\KioskProgressBar.cs" />
     <Compile Include="Converters\IsLastItemConverter.cs" />
     <Compile Include="Converters\IsProgressedConverter.cs" />
+    <Compile Include="Converters\MultiParamConverter.cs" />
     <Compile Include="Utilities\ImageConverter.cs" />
     <Compile Include="Utilities\NavigationServiceHelper.cs" />
     <Compile Include="ViewModels\AmountToWithdraw.cs" />
