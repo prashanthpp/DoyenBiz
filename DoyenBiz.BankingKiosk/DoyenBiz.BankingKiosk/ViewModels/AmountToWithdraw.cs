@@ -11,6 +11,8 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Windows.Input;
 using System.Text;
+using System.Timers;
+using System.Diagnostics;
 
 namespace DoyenBiz.BankingKiosk.ViewModels
 {
@@ -171,14 +173,16 @@ namespace DoyenBiz.BankingKiosk.ViewModels
 
         private async Task<bool> Transaction_InProgress(string transactionId)
         {
-            var controllerInProgress = await CurrentWindow.ShowProgressAsync("Completing two-factor Biometric Authentication...", "Verifying transaction with the Account holder...");
+            var controllerInProgress = await CurrentWindow.ShowProgressAsync("Processing your Transaction... Please wait", "Completing two-factor Biometric Authentication...");//Verifying transaction with the Account holder...
             controllerInProgress.SetCancelable(true);
+            await Task.Delay(1500);
 
             string transactionStatus;
-            int i = 0;//comment or remove this once the service is implemented to give the success message.
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             do
             {
-                await Task.Delay(1000);
                 //logic to call the Verify Transaction service here... and break once we receive the success message
                 try
                 {
@@ -197,24 +201,45 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                             JObject jOb = (JObject)jsonDe;
                             transactionStatus = jOb["TransactionStatus"].ToString();
 
-                            #region comment this region once the service is ready to give success message
-                            i++;
-                            if (i == 10)
-                            {
-                                await controllerInProgress.CloseAsync();
-                                return true;
-                            }
-                            #endregion
-
                             if (transactionStatus.ToLower() == "approved")
                             {
                                 await controllerInProgress.CloseAsync();
+                                stopwatch.Stop();
                                 return true;
+                            }
+                            else if(transactionStatus.ToLower() == "biocheckwip")
+                            {
+                                if( stopwatch.Elapsed.TotalSeconds > 10)
+                                {
+                                    await controllerInProgress.CloseAsync();
+                                    stopwatch.Stop();
+                                    await Transaction_Cancelled(transactionId);
+                                }
+                                await Task.Delay(1000);
+                            }
+                            else if (transactionStatus.ToUpper() == "CHECKINGWITHACCTHOLDER")
+                            {
+                                await controllerInProgress.CloseAsync();
+                                stopwatch.Stop();
+                                controllerInProgress = await CurrentWindow.ShowProgressAsync("Processing your Transaction... Please wait", "Verifying transaction with the Account holder... this may take some time...");
+                            }
+                            else if (transactionStatus.ToUpper() == "NORESPONSEFROMACCTHOLDER")
+                            {
+                                await controllerInProgress.CloseAsync();
+                                stopwatch.Stop();
+                                await Transaction_Cancelled(transactionId, transactionStatus.ToUpper());
+                            }
+                            else if (transactionStatus.ToUpper() == "ACCTHOLDERREJECTEDTR")
+                            {
+                                await controllerInProgress.CloseAsync();
+                                stopwatch.Stop();
+                                await Transaction_Cancelled(transactionId, transactionStatus.ToUpper());
                             }
 
                             if (controllerInProgress.IsCanceled)
                             {
                                 await controllerInProgress.CloseAsync();
+                                stopwatch.Stop();
                                 await Transaction_Cancelled(transactionId);
                             }
                         }
@@ -225,20 +250,50 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                     return false;
                 }
             } while (transactionStatus.ToLower() != "approved");
-
+            stopwatch.Stop();
             return false;
         }
 
-        private async Task Transaction_Cancelled(object sender)
+        private async Task Transaction_Cancelled(object sender,string cancelReason = "GENERAL")
         {
+            string buttonText = "OK";
+            string DialogueMainText = "Your transaction could not be completed...";
+            string dialogueSubText = "";
+            switch (cancelReason)
+            {
+                case "NORESPONSEFROMACCTHOLDER" : 
+                    buttonText = "Return Home";
+                    DialogueMainText = "Your transaction could not be completed...";
+                    dialogueSubText = "Account Holder rejected the transaction or there was no response from Account Holder...";
+                    break;
+
+                case "ACCTHOLDERREJECTEDTR":
+                    buttonText = "Return Home";
+                    DialogueMainText = "Your transaction could not be completed...";
+                    dialogueSubText = "Account Holder rejected the transaction or there was no response from Account Holder...";
+                    break;
+
+                case "INSUFFICIENTFUNDS": 
+                    buttonText = "Return Home";
+                    DialogueMainText = "Your transaction could not be completed...";
+                    dialogueSubText = "Insufficient funds in Account...";
+                    break;
+
+                default: 
+                    buttonText = "OK";
+                    DialogueMainText = "Your Transaction is Cancelled...";
+                    dialogueSubText="";
+                    break;
+            }
+
             Progress += 100;
             var mySettings = new MetroDialogSettings()
             {
-                AffirmativeButtonText = "OK",
+                AffirmativeButtonText = buttonText,
                 ColorScheme = CurrentWindow.MetroDialogOptions.ColorScheme
             };
 
-            MessageDialogResult result = await CurrentWindow.ShowMessageAsync("Your Transaction is Cancelled...", "",
+            MessageDialogResult result = await CurrentWindow.ShowMessageAsync(DialogueMainText,dialogueSubText,
                 MessageDialogStyle.Affirmative, mySettings);
 
             if (result == MessageDialogResult.Affirmative)
