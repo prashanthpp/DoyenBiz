@@ -199,9 +199,9 @@ namespace DoyenBiz.BankingKiosk.ViewModels
 
         private async Task<bool> Transaction_InProgress(string transactionId)
         {
-            var controllerInProgress = await CurrentWindow.ShowProgressAsync("Processing your Transaction... Please wait", "Completing two-factor Biometric Authentication...");//Verifying transaction with the Account holder...
+            var controllerInProgress = await CurrentWindow.ShowProgressAsync("Processing your Transaction... Please wait", "Completing two-factor Biometric Authentication...");
             controllerInProgress.SetCancelable(true);
-            await Task.Delay(1500);
+            await Task.Delay(2000);
 
             string transactionStatus;
             Stopwatch stopwatch = new Stopwatch();
