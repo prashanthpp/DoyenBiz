@@ -18,7 +18,42 @@
                       WindowState="Maximized"
                       WindowStyle="None"
                       IgnoreTaskbarOnMaximize="True"
+                              xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+
                       >
+
+    <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="87*"/>
+            <ColumnDefinition Width="430*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="83*"/>
+            <RowDefinition Height="259*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Text="Start"
+                   FontWeight="Light"
+                   Foreground="White"
+                   FontSize="30"
+                   FontFamily="Segoe UI" />
+
+        <WrapPanel Grid.Row="1" Grid.Column="1" Width="940" Height="382" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <mah:Tile Title="Mail" Style="{StaticResource LargeTileStyle}" Content="ImageHere" Background="Teal" Margin="3"/>
+            <mah:Tile Title="Desktop" Style="{StaticResource LargeTileStyle}"  Margin="3">
+                <mah:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/Images/Axis.jpeg" />
+                </mah:Tile.Background>
+            </mah:Tile>
+            <mah:Tile Title="Finance" Style="{StaticResource LargeTileStyle}" Background="Green"  />
+            <mah:Tile Title="People" Style="{StaticResource LargeTileStyle}" Background="#D2691E" />
+            <mah:Tile Title="Weather" Style="{StaticResource LargeTileStyle}" Background="#1E90FF" />
+            <mah:Tile Title="Weather" Style="{StaticResource SmallTileStyle}" Background="#1E90FF" />
+            <mah:Tile Title="Store" Style="{StaticResource SmallTileStyle}" Background="Green" />
+        </WrapPanel>
+    </Grid>-->
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
@@ -44,11 +79,24 @@
         <Grid x:Name="bankLogos" Grid.Row="1" Grid.Column="0">
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <WrapPanel>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}" Click="bank_click" Tag="ICICI">
+                    <Controls:TransitioningContentControl x:Name="AIXS"
+                                                  Style="{StaticResource LargeTileStyleTrans}"
+                                                  Transition="Up">
+                        <!--<Controls:Tile Style="{StaticResource LargeTileStyle}" Click="bank_click" Tag="ICICI">
                         <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
+                            <ImageBrush ImageSource="/Resources/Images/aixs_bank.jpg"/>
                         </Controls:Tile.Background>
-                    </Controls:Tile>
+                    </Controls:Tile>-->
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="GNI"
+                                                  Style="{StaticResource LargeTileStyleTrans}"
+                                                  Transition="Up">
+                        <!--<Controls:Tile Style="{StaticResource LargeTileStyle}" Click="bank_click" Tag="ICICI">
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="/Resources/Images/aixs_bank.jpg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>-->
+                    </Controls:TransitioningContentControl>
                     <Controls:Tile Style="{StaticResource SmallTileStyle}">
                         <Controls:Tile.Background>
                             <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>

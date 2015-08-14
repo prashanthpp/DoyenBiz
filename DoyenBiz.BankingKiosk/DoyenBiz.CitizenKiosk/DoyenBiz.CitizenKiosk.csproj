@@ -71,12 +71,28 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Utilities\NavigationServiceHelper.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\TransactionHomeViewModel.cs" />
+    <Compile Include="Views\MobileNumber.xaml.cs">
+      <DependentUpon>MobileNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayCash.xaml.cs">
+      <DependentUpon>PayCash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RechargeAmount.xaml.cs">
+      <DependentUpon>RechargeAmount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TransactionHome.xaml.cs">
       <DependentUpon>TransactionHome.xaml</DependentUpon>
     </Compile>
     <Page Include="Common\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MobileNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MobileServices.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -97,6 +113,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\PayCash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RechargeAmount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TransactionHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,7 +159,6 @@
   <ItemGroup>
     <Folder Include="DataAccess\" />
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Axis.jpeg" />

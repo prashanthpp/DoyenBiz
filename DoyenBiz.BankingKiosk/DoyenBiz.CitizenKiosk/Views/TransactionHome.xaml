@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:DoyenBiz.CitizenKiosk"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+                        xmlns:viewModels="clr-namespace:DoyenBiz.CitizenKiosk.ViewModels"
         mc:Ignorable="d"
         Title="TSP Home"
         ShowMinButton="False"
@@ -16,7 +17,20 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         WindowStyle="None"
+                      xmlns:kioskWindows="clr-namespace:DoyenBiz.CitizenKiosk.Views"
         IgnoreTaskbarOnMaximize="True">
+    <Window.DataContext>
+        <viewModels:TransactionHomeViewModel/>
+    </Window.DataContext>
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl x:Name="flyoutsControl">
+            <kioskWindows:MobileNumber Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
+            <kioskWindows:RechargeAmount Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
+            <kioskWindows:PayCash Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
+        </Controls:FlyoutsControl>
+
+    </Controls:MetroWindow.Flyouts>
+
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
@@ -51,7 +65,7 @@
                 </Style>
             </ListBox.ItemContainerStyle>
             <ListBoxItem>
-                <Button  Style="{StaticResource LargeMetroButton}">Recharge Pre-paid Mobile</Button>
+                <Button  Style="{StaticResource LargeMetroButton}"  Command="{Binding ButtonCommand}" CommandParameter="Recharge">Recharge Pre-paid Mobile</Button>
             </ListBoxItem>
             <ListBoxItem>
                 <Button Style="{StaticResource MetroButton}">Pay Post Paid Bill</Button>
