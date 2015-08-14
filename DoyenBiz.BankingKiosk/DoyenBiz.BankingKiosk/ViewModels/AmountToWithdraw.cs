@@ -103,14 +103,16 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 await Task.Delay(500);
 
                 bool tranSuccess = false;
+                bool closeController = true;
                 try
                 {
                     string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
 
                     string imageToSend = ImageConverter.EncodeInHTML(ImageConverter.ConvertToBase64(ConfigurationManager.AppSettings["imageToSendPath"]));
                     string cardNo = ConfigurationManager.AppSettings["cardNumber"].ToString();
+                    string kioskId = ConfigurationManager.AppSettings["kioskID"].ToString();
 
-                    string queryUri = "service=BankingServices&action=VerifyTransaction&kioskid=101&cardno="+cardNo +"&pin=1234&amount=" + enteredAmount + "&image=" + imageToSend;
+                    string queryUri = "service=BankingServices&action=VerifyTransaction&kioskid="+kioskId+"&cardno="+cardNo +"&pin=1234&amount=" + enteredAmount + "&image=" + imageToSend;
                     HttpWebRequest myRequest =
                       (HttpWebRequest)WebRequest.Create(servicesUri);
                    
@@ -134,6 +136,7 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                             JObject jOb = (JObject)jsonDe;
                             string transactionID = jOb["TransactionID"].ToString();
                             await controller.CloseAsync();
+                            closeController = false;
 
                             //Write the service calls to get the status of the transaction
                             tranSuccess = await Transaction_InProgress(transactionID);
@@ -160,6 +163,9 @@ namespace DoyenBiz.BankingKiosk.ViewModels
 
                 if (!tranSuccess)
                 {
+                    if(closeController)
+                        await controller.CloseAsync();
+
                     if (controller.IsCanceled)
                     {
                         await Transaction_Cancelled(obj);
@@ -213,7 +219,8 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                 try
                 {
                     string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
-                    string queryUri = servicesUri + "?service=BankingServices&action=GetTransactionStatus&kioskid=101&transactionid=" + transactionId;
+                    string kioskId = ConfigurationManager.AppSettings["kioskID"].ToString();
+                    string queryUri = servicesUri + "?service=BankingServices&action=GetTransactionStatus&kioskid="+kioskId+"&transactionid=" + transactionId;
                     HttpWebRequest myRequest =
                       (HttpWebRequest)WebRequest.Create(queryUri);
                     myRequest.Method = "POST";
@@ -247,7 +254,12 @@ namespace DoyenBiz.BankingKiosk.ViewModels
                             {
                                 await controllerInProgress.CloseAsync();
                                 stopwatch.Stop();
+                                //stopwatch.Restart();
                                 controllerInProgress = await CurrentWindow.ShowProgressAsync("Processing your Transaction... Please wait", "Verifying transaction with the Account holder... this may take some time...");
+                                //if (stopwatch.Elapsed.TotalSeconds > 20)
+                                //{
+                                //    await Transaction_Cancelled(transactionId, "NORESPONSEFROMACCTHOLDER");
+                                //}
                             }
                             else if (transactionStatus.ToUpper() == "NORESPONSEFROMACCTHOLDER")
                             {
