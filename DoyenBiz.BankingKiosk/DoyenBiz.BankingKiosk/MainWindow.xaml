@@ -59,26 +59,30 @@
     </Controls:MetroWindow.Background>
     <Grid x:Name="mainGrid" Margin="5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".55*"/>
-            <ColumnDefinition Width=".45*"/>
+            <ColumnDefinition Width=".35*"/>
+            <ColumnDefinition Width=".35*"/>
+            <ColumnDefinition Width=".29*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
             <RowDefinition Height=".8*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Resources/Images/Hand-Sign-11.png" Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
                 <Label Content="Welcome! Please tap on your Bank ..." Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-20,0,0,0"/>
             </StackPanel>
         </Grid>
-        <Image x:Name="companyLogo" Grid.Column="1" Source="/Resources/Images/icici.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+        <Image x:Name="companyLogo" Grid.Column="2" Source="/Resources/Images/icici.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
 
 
         <Grid x:Name="bankLogos" Grid.Row="1" Grid.Column="0">
+         
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <WrapPanel  FlowDirection="LeftToRight" HorizontalAlignment="Left">
+                    <Label Content="Popular Services" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" />
+
                     <Controls:TransitioningContentControl x:Name="AIXS"
                                                   Transition="Up">
                     </Controls:TransitioningContentControl>
@@ -105,8 +109,60 @@
                     </Controls:TransitioningContentControl>
                 </WrapPanel>
             </ScrollViewer>
+            
         </Grid>
-        <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="1">
+
+        <Grid x:Name="allBanks" Grid.Row="1" Grid.Column="1">
+
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <WrapPanel  FlowDirection="LeftToRight" HorizontalAlignment="Left">
+                    <Label Content="All Banks                            " Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" />
+                    <Controls:TransitioningContentControl x:Name="DBI"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="srb"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="Uinon"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="india_oversi"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="patelco"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="DEUTSCHE"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+
+                    <Controls:TransitioningContentControl x:Name="Alliance"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                
+                    <Controls:TransitioningContentControl x:Name="IndusInd"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="marudhara"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="srb1"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="ocbc"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="orporation"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                 
+                 
+                  
+                </WrapPanel>
+            </ScrollViewer>
+
+        </Grid>
+        <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="2">
             <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">
                 <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
                     <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}">

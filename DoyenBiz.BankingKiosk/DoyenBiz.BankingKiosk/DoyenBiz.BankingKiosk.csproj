@@ -270,6 +270,38 @@
   <ItemGroup>
     <Resource Include="Resources\Images\hfdc_bank_text.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Alliance_bank_logo.jpg" />
+    <Resource Include="Resources\Images\Alliance_bank_text.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\DEUTSCHE_Logo.jpg" />
+    <Resource Include="Resources\Images\DEUTSCHE_text.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\india_oversi_bank_logo.jpg" />
+    <Resource Include="Resources\Images\india_oversi_bank_text.jpg" />
+    <Resource Include="Resources\Images\IndusInd_bank_logo.jpg" />
+    <Resource Include="Resources\Images\IndusInd_bank_text.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\marudhara_logo.jpg" />
+    <Resource Include="Resources\Images\marudhara_text.jpg" />
+    <Resource Include="Resources\Images\ocbc.jpg" />
+    <Resource Include="Resources\Images\ocbc_text.jpg" />
+    <Resource Include="Resources\Images\orporation.jpg" />
+    <Resource Include="Resources\Images\orporation_text.jpg" />
+    <Resource Include="Resources\Images\patelco_logo.jpg" />
+    <Resource Include="Resources\Images\patelco_text.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\public_bank.jpg" />
+    <Resource Include="Resources\Images\public_bank_text.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\srb_logo.jpg" />
+    <Resource Include="Resources\Images\srb_text.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
