@@ -7,15 +7,38 @@
         mc:Ignorable="d"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
-        xmlns:kioskControls="clr-namespace:DoyenBiz.CitizenKiosk.Controls"
         BorderBrush="Black"
         BorderThickness="1"
-       MaxWidth="950" Width="900"
+        xmlns:kioskControls="clr-namespace:DoyenBiz.CitizenKiosk.Controls"
+          MaxWidth="950" Width="900"
         >
     <controls:Flyout.Background>
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </controls:Flyout.Background>
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" >
+            <Image Source="/Resources/Images/Hand-Sign-11.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
+        </StackPanel>
+        <kioskControls:KioskProgressBar x:Name="transactionProgressBar" Grid.Row="1" ItemsSource="{Binding Steps}" Foreground="#FF086398" Progress="{Binding Progress}" SnapsToDevicePixels="True" Margin="40"/>
+        <Grid x:Name="bioAuth" Grid.Row="2">
+            <Grid HorizontalAlignment="Center" Margin="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height=".7*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Please deposit exact cash into the Cash Deposit Box</TextBlock>
+                <DataGrid AutoGenerateColumns="True" x:Name="dgDetails" Grid.Row="1" Width="300" Height="200" VerticalAlignment="Top"/>
+                <Button x:Name="btnAmount" Width="100" Height="50"
+                        BorderThickness="2" 
+                        Style="{StaticResource MetroButton}"
+                        Margin="600,0,0,0" Content="Go"
+                        VerticalAlignment="Center"  />
+            </Grid>
+        </Grid>
     </Grid>
 </controls:Flyout>

@@ -163,18 +163,39 @@
 
         </Grid>
         <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="2">
-            <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
-                    <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"/>
+                <ColumnDefinition Width=".2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            
+                <Label Content="About                      " Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" Grid.Row="0" />
+            
+                <Border Style="{StaticResource contentBoxHomeBorder}" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2">
+                        <TextBlock TextWrapping="Wrap" Width="180" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}"  >
                 This ATM uses a two-factor Biometric Authentication to check you are the account holder. By continuing to use the ATM services, you agree to provide you finger print and you agree to have your picture taken
-                    <LineBreak/>
-                    <LineBreak/>
-                 If your picture of finger print does not match the Account Holder's Biometric File, we will send a verification SMS to the Account Holder to authorize the transaction
-                    <LineBreak/>
-                    <LineBreak/>
-                 For any help or support needed to use the KIOSK, please call us on 1-800-CITIZEN-KIOSK.
+                        </TextBlock>
+                </Border>
+            <Border Style="{StaticResource contentBoxHomeBorder}"  Grid.Row="1" Grid.Column="1" Margin="10,0,0,0">
+                        <TextBlock TextWrapping="Wrap" Width="90" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}"  >
+                            Your Feedback is valuable to us <LineBreak />
+                        </TextBlock>
+                </Border>
+            <Border Style="{StaticResource contentBoxHomeBorder}"  Grid.Row="2" Grid.Column="1"  Margin="10,10,0,0">
+                    <TextBlock TextWrapping="Wrap" Width="90" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}"  >
+                            DoyenBiz - Abouris <LineBreak />
                     </TextBlock>
-                </ScrollViewer>
+            </Border>
+
+            <Border Style="{StaticResource contentBoxHomeBorder}"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,00,0">
+                    <TextBlock TextWrapping="Wrap" Width="210" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}" FontSize="15"  >
+                            Need Help Or support? Call us on 1-800-BANKING-KIOSK <LineBreak />
+                    </TextBlock>
             </Border>
         </Grid>
     </Grid>
