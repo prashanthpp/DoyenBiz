@@ -16,7 +16,11 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         WindowStyle="None"
+                         xmlns:viewModels="clr-namespace:DoyenBiz.CitizenKiosk.ViewModels"
         IgnoreTaskbarOnMaximize="True">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>

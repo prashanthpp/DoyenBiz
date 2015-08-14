@@ -78,80 +78,31 @@
 
         <Grid x:Name="bankLogos" Grid.Row="1" Grid.Column="0">
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
-                <WrapPanel>
+                <WrapPanel  FlowDirection="LeftToRight" HorizontalAlignment="Left">
                     <Controls:TransitioningContentControl x:Name="AIXS"
-                                                  Style="{StaticResource LargeTileStyleTrans}"
                                                   Transition="Up">
-                        <!--<Controls:Tile Style="{StaticResource LargeTileStyle}" Click="bank_click" Tag="ICICI">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="/Resources/Images/aixs_bank.jpg"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>-->
                     </Controls:TransitioningContentControl>
                     <Controls:TransitioningContentControl x:Name="GNI"
-                                                  Style="{StaticResource LargeTileStyleTrans}"
                                                   Transition="Up">
-                        <!--<Controls:Tile Style="{StaticResource LargeTileStyle}" Click="bank_click" Tag="ICICI">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="/Resources/Images/aixs_bank.jpg"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>-->
                     </Controls:TransitioningContentControl>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/icici.png"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/Axis.jpeg"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
+                    <Controls:TransitioningContentControl x:Name="Telangana"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="HFDC"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="CICIC"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="Kanara"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="BankOfIndia"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="HSBC"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
                 </WrapPanel>
             </ScrollViewer>
         </Grid>
