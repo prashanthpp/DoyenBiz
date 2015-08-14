@@ -6,7 +6,7 @@
 
     <Style x:Key="TitleText" TargetType="Label">
         <Setter Property="FontFamily" Value="Segoe UI"/>
-        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="FontSize" Value="40"/>
     </Style>
     <Style x:Key="TitleTextLong" TargetType="Label">
         <Setter Property="FontFamily" Value="Segoe UI"/>

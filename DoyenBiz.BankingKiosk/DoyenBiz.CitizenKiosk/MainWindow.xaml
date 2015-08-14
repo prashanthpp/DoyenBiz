@@ -36,7 +36,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-            <Label Content="Select your Service" Style="{StaticResource TitleText}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="Welcome! Select your desired Service" Style="{StaticResource TitleText}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Viewbox HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
             </Viewbox>
@@ -123,7 +123,7 @@
         <StackPanel x:Name="footerGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
             <Label x:Name="footerBalanceLabel" Content="Kiosk Pre-Paid Balance" FontSize="24"></Label>
             <Label x:Name="footerBalanceCurrency" Content="INR" FontSize="24" Foreground="Green"></Label>
-            <Label x:Name="footerBalanceValue" Content="45540" FontSize="24" Foreground="Green"></Label>
+            <TextBlock x:Name="footerBalanceValue" VerticalAlignment="Center" Text="{Binding Balance,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="24" Foreground="Green"></TextBlock>
         </StackPanel>
     </Grid>
 </Controls:MetroWindow>

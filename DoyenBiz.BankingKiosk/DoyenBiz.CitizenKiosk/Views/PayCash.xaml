@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        xmlns:kioskControls="clr-namespace:DoyenBiz.CitizenKiosk.Controls"
         BorderBrush="Black"
         BorderThickness="1"
        MaxWidth="950" Width="900"

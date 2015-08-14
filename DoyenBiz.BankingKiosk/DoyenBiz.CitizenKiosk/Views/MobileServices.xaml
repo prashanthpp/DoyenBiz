@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:DoyenBiz.CitizenKiosk"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+                      xmlns:viewModels="clr-namespace:DoyenBiz.CitizenKiosk.ViewModels"
         mc:Ignorable="d"
         Title="Mobile Services"
         ShowMinButton="False"
@@ -17,6 +18,9 @@
         WindowState="Maximized"
         WindowStyle="None"
         IgnoreTaskbarOnMaximize="True">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
@@ -120,7 +124,7 @@
         <StackPanel x:Name="footerGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
             <Label x:Name="footerBalanceLabel" Content="Kiosk Pre-Paid Balance" FontSize="24"></Label>
             <Label x:Name="footerBalanceCurrency" Content="INR" FontSize="24" Foreground="Green"></Label>
-            <Label x:Name="footerBalanceValue" Content="45540" FontSize="24" Foreground="Green"></Label>
+            <TextBlock x:Name="footerBalanceValue" VerticalAlignment="Center" Text="{Binding Balance,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="24" Foreground="Green"></TextBlock>
         </StackPanel>
     </Grid>
 </Controls:MetroWindow>

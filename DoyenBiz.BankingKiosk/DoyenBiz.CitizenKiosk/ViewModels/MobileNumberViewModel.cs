@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace DoyenBiz.CitizenKiosk.ViewModels
 {
     public class MobileNumberViewModel : BaseViewModel
     {
         private ICommand m_KeyButtonCommand;
+        public static string _mobileNumber;
 
         public ICommand KeyButtonCommand
         {
@@ -40,8 +42,23 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
 
         public async void GoButton_Click(object inputBoxValue)
         {
-            ToggleFlyout(0);
-            ToggleFlyout(1);
+            var enteredNumber = string.Empty;
+            if (inputBoxValue != null && inputBoxValue is TextBox)
+                enteredNumber = ((TextBox)inputBoxValue).Text;
+            if (String.IsNullOrWhiteSpace(enteredNumber))
+            {
+                await CurrentWindow.ShowMessageAsync("Please enter Mobile Number to proceed", "");
+            }
+            else if (enteredNumber.Length > 0 && enteredNumber.ToString().Length < 10)
+            {
+                await CurrentWindow.ShowMessageAsync("Please enter all the 10 digits of Mobile Number", "");
+            }
+            else
+            {
+                _mobileNumber = enteredNumber;
+                ToggleFlyout(0);
+                ToggleFlyout(1);
+            }
         }
 
         public async void KeyButtonCommand_Click(object inputBoxValue)
