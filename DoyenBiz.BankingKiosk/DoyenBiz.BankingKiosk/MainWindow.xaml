@@ -84,7 +84,7 @@
                     <Label Content="Popular Services" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" />
 
                     <Controls:TransitioningContentControl x:Name="AIXS"
-                                                  Transition="Up">
+                                                  Transition="Up"  >
                     </Controls:TransitioningContentControl>
                     <Controls:TransitioningContentControl x:Name="GNI"
                                                   Transition="Up">
