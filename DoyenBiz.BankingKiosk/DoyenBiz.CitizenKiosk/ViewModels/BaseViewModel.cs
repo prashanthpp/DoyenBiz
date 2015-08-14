@@ -62,11 +62,10 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
         private void InitializeVariables()
         {
             Steps = new ObservableCollection<string>();
-            Steps.Add("Swipe Card");
-            Steps.Add("Enter Pin");
-            Steps.Add("Biometric Authentication");
-            Steps.Add("Amount to Withdraw");
-            Steps.Add("Take Cash");
+            Steps.Add("Mobile Number");
+            Steps.Add("Recharge Amount");
+            Steps.Add("Pay Cash");
+            Steps.Add("Mobile Recharged");
             // this.DataContext = this;
         }
 

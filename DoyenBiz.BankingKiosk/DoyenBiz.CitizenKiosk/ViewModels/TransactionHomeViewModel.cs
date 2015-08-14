@@ -11,7 +11,7 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
         public TransactionHomeViewModel()
         {
             ButtonCommand = new RelayCommand(new Action<object>(prePaidButton_Click));
-            Progress += 60;
+            Progress += 20;
 
         }
 

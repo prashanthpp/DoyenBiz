@@ -9,12 +9,63 @@
         xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
         BorderBrush="Black"
         BorderThickness="1"
+                  xmlns:kioskControls="clr-namespace:DoyenBiz.CitizenKiosk.Controls"
        MaxWidth="950" Width="900"
         >
     <controls:Flyout.Background>
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </controls:Flyout.Background>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" >
+            <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
+        </StackPanel>
+        <kioskControls:KioskProgressBar x:Name="transactionProgressBar" Grid.Row="1" ItemsSource="{Binding Steps}" Foreground="#FF086398" Progress="{Binding Progress}" SnapsToDevicePixels="True" Margin="40"/>
+        <Grid x:Name="inputPIN" Grid.Row="2">
+            <Grid HorizontalAlignment="Center" Margin="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height=".2*"/>
+                    <RowDefinition Height=".5*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Please enter your 10-digit Mobile Number</TextBlock>
+                <Grid Grid.Row="1"  Height="50" HorizontalAlignment="Center">
+                    <TextBox x:Name="inputMobileBox" Width="400" Height="50" TextAlignment="Right"
+                             VerticalContentAlignment="Center" 
+                             MaxLength="4" FontSize="30"
+                             />
+
+                    <Button x:Name="validatePINButton" Width="100" Height="50"
+                        BorderThickness="2" 
+                        Style="{StaticResource MetroButton}"
+                        Margin="600,0,0,0" Content="Go"
+                        VerticalAlignment="Center"  Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=inputMobileBox}"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel Width="400" Height="500" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <WrapPanel>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="1" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="1"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="2" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="2"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="3" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="3"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="4" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="4"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="5" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="5"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="6" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="6"/>
+
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="7" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="7"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="8" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="8"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="9" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="9"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="0" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="0"/>
+                                <Button Width="220" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="backspace" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="backspace"/>
+                            </WrapPanel>
+                        </ScrollViewer>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </controls:Flyout>

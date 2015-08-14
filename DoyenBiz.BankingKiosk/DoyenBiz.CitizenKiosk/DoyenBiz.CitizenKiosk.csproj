@@ -70,8 +70,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\KioskProgressBar.cs" />
+    <Compile Include="Converters\IsLastItemConverter.cs" />
+    <Compile Include="Converters\IsProgressedConverter.cs" />
     <Compile Include="Utilities\NavigationServiceHelper.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\MobileNumberViewModel.cs" />
+    <Compile Include="ViewModels\PayCashViewModel.cs" />
+    <Compile Include="ViewModels\RechargeAmountViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\TransactionHomeViewModel.cs" />
     <Compile Include="Views\MobileNumber.xaml.cs">
@@ -87,8 +93,8 @@
       <DependentUpon>TransactionHome.xaml</DependentUpon>
     </Compile>
     <Page Include="Common\Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MobileNumber.xaml">
       <SubType>Designer</SubType>
@@ -171,6 +177,37 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\ScreenBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\aixs_bank.jpg" />
+    <Resource Include="Resources\Images\ATM-02.png" />
+    <Resource Include="Resources\Images\axis_bank.jpg" />
+    <Resource Include="Resources\Images\bank_of_india-text.jpg" />
+    <Resource Include="Resources\Images\bank_of_india_logo.jpg" />
+    <Resource Include="Resources\Images\Chart-Printing.png" />
+    <Resource Include="Resources\Images\Cheque-02.png" />
+    <Resource Include="Resources\Images\cicic.jpg" />
+    <Resource Include="Resources\Images\cicic_logo.jpg" />
+    <Resource Include="Resources\Images\dbi_logo.jpg" />
+    <Resource Include="Resources\Images\dbi_text.jpg" />
+    <Resource Include="Resources\Images\Exit-03.png" />
+    <Resource Include="Resources\Images\gni_logo.jpg" />
+    <Resource Include="Resources\Images\gni_text.jpg" />
+    <Resource Include="Resources\Images\Hand-Sign-11.png" />
+    <Resource Include="Resources\Images\hfdc_bank.jpg" />
+    <Resource Include="Resources\Images\hfdc_bank_text.jpg" />
+    <Resource Include="Resources\Images\hsbc_logo.jpg" />
+    <Resource Include="Resources\Images\hsbc_text.jpg" />
+    <Resource Include="Resources\Images\kanara_logo.jpg" />
+    <Resource Include="Resources\Images\kanara_text.jpg" />
+    <Resource Include="Resources\Images\kishanImage.jpg" />
+    <Resource Include="Resources\Images\Payments.png" />
+    <Resource Include="Resources\Images\Rupee.png" />
+    <Resource Include="Resources\Images\telangana_bank_logo.jpg" />
+    <Resource Include="Resources\Images\telangana_bank_text.jpg" />
+    <Resource Include="Resources\Images\Touch-Screen.png" />
+    <Resource Include="Resources\Images\uinon_logo.jpg" />
+    <Resource Include="Resources\Images\uinon_text.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

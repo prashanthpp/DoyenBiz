@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using DoyenBiz.CitizenKiosk.ViewModels;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,10 @@ namespace DoyenBiz.CitizenKiosk.Views
         public MobileNumber()
         {
             InitializeComponent();
+            var viewModel = (new MobileNumberViewModel());
+            viewModel.InputBox = this.inputMobileBox;
+            this.DataContext = viewModel;
+            inputMobileBox.Focus();
         }
     }
 }
