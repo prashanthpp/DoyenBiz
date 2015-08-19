@@ -34,11 +34,10 @@ namespace DoyenBiz.CitizenKiosk
 
         public enum TransitionTiles
         {
-            AIXS,
-            GNI,
+            mobile,
+            utility,
             BankOfIndia,
             CICIC,
-            DBI,
             HFDC,
             HSBC,
             Kanara,
@@ -63,12 +62,13 @@ namespace DoyenBiz.CitizenKiosk
             InitializeComponent();
 
             m_TimerCollection = new Dictionary<string, TransitionDispatcher>();
-            m_TimerCollection.Add(TransitionTiles.AIXS.ToString(),
-                     new TransitionDispatcher(AIXS, TransitionTiles.AIXS.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "axis_bank.jpg", "aixs_bank.jpg", TransitionDispatcher.TileSize.Large));
-            m_TimerCollection.Add(TransitionTiles.GNI.ToString(),
-                        new TransitionDispatcher(GNI, TransitionTiles.GNI.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                      "gni_logo.jpg", "gni_text.jpg", TransitionDispatcher.TileSize.Small));
+            m_TimerCollection.Add(TransitionTiles.mobile.ToString(),
+                     new TransitionDispatcher(mobile, TransitionTiles.mobile.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
+                     "mobile_services.jpg", "mobile_services1.jpg", TransitionDispatcher.TileSize.Large));
+
+            m_TimerCollection.Add(TransitionTiles.utility.ToString(),
+                        new TransitionDispatcher(utility, TransitionTiles.utility.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
+                      "Pay_utlity_bills.jpg", "Pay_utlity_bills1.jpg", TransitionDispatcher.TileSize.Small));
             m_TimerCollection.Add(TransitionTiles.Telangana.ToString(),
                      new TransitionDispatcher(Telangana, TransitionTiles.Telangana.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
                      "telangana_bank_logo.jpg", "telangana_bank_text.jpg", TransitionDispatcher.TileSize.Small));
@@ -92,10 +92,6 @@ namespace DoyenBiz.CitizenKiosk
             m_TimerCollection.Add(TransitionTiles.Uinon.ToString(),
                   new TransitionDispatcher(Uinon, TransitionTiles.Uinon.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
                    "uinon_logo.jpg", "uinon_logo.jpg", TransitionDispatcher.TileSize.Small));
-
-            m_TimerCollection.Add(TransitionTiles.DBI.ToString(),
-                    new TransitionDispatcher(DBI, TransitionTiles.DBI.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "dbi_logo.jpg", "dbi_text.jpg", TransitionDispatcher.TileSize.Small));
 
             m_TimerCollection.Add(TransitionTiles.Alliance.ToString(),
                     new TransitionDispatcher(Alliance, TransitionTiles.Alliance.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
@@ -128,7 +124,7 @@ namespace DoyenBiz.CitizenKiosk
                     new TransitionDispatcher(srb1, TransitionTiles.srb1.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
                      "srb_logo.jpg", "srb_text.jpg", TransitionDispatcher.TileSize.Small));
 
-
+            var txtDispatcher = new DispatcherTimer(TimeSpan.FromSeconds(3), DispatcherPriority.Normal, TransitionText, this.Dispatcher);
 
             rndInterval = new Random();
         }
@@ -166,9 +162,36 @@ namespace DoyenBiz.CitizenKiosk
                 tile.Tag = "Text";
             }
             transitioning.Content = tile;// new BitmapImage(new Uri(""));
-            transitionInfo.TransTimer.Interval = new TimeSpan(0, 0, rndInterval.Next(5));
+            transitionInfo.TransTimer.Interval = new TimeSpan(0, 0, rndInterval.Next(3,8));
             //timer.Interval = new TimeSpan(0, 0, rndInterval.Next(5));
         }
+
+
+        void TransitionText(object sender, EventArgs e)
+        {
+            var txtContent = new TextBlock();
+            txtContent.TextWrapping = TextWrapping.Wrap;
+            txtContent.Width =230;
+            txtContent.HorizontalAlignment = HorizontalAlignment.Left;
+            txtContent.FontFamily = new FontFamily("Segoe UI");
+            txtContent.FontSize = 15;
+            txtContent.TextAlignment = TextAlignment.Justify;
+
+
+            if (about.Tag.ToString() == "Text")
+            {
+                txtContent.Text = "CUSTOMIZE this Kiosk! Create your unique Kiosk PIN to access all your bill payments and frequently used services at one place! At any KIOSK!";
+                about.Content = txtContent;
+                about.Tag = "Logo";
+            }
+            else
+            {
+                txtContent.Text = "This ATM uses a two-factor Biometric Authentication to check you are the account holder. By continuing to use the ATM services, you agree to provide you finger print and you agree to have your picture taken";
+                about.Content = txtContent;
+                about.Tag = "Text";
+            }
+        }
+
 
         private void Tile_Click(object sender, RoutedEventArgs e)
         {

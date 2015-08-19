@@ -172,47 +172,24 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\Axis.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\Axis.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\icici.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\ScreenBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\aixs_bank.jpg" />
-    <Resource Include="Resources\Images\ATM-02.png" />
-    <Resource Include="Resources\Images\axis_bank.jpg" />
-    <Resource Include="Resources\Images\bank_of_india-text.jpg" />
-    <Resource Include="Resources\Images\bank_of_india_logo.jpg" />
-    <Resource Include="Resources\Images\Chart-Printing.png" />
-    <Resource Include="Resources\Images\Cheque-02.png" />
-    <Resource Include="Resources\Images\cicic.jpg" />
-    <Resource Include="Resources\Images\cicic_logo.jpg" />
-    <Resource Include="Resources\Images\dbi_logo.jpg" />
-    <Resource Include="Resources\Images\dbi_text.jpg" />
-    <Resource Include="Resources\Images\Exit-03.png" />
-    <Resource Include="Resources\Images\gni_logo.jpg" />
-    <Resource Include="Resources\Images\gni_text.jpg" />
-    <Resource Include="Resources\Images\Hand-Sign-11.png" />
-    <Resource Include="Resources\Images\hfdc_bank.jpg" />
-    <Resource Include="Resources\Images\hfdc_bank_text.jpg" />
-    <Resource Include="Resources\Images\hsbc_logo.jpg" />
-    <Resource Include="Resources\Images\hsbc_text.jpg" />
-    <Resource Include="Resources\Images\kanara_logo.jpg" />
-    <Resource Include="Resources\Images\kanara_text.jpg" />
-    <Resource Include="Resources\Images\kishanImage.jpg" />
-    <Resource Include="Resources\Images\Payments.png" />
-    <Resource Include="Resources\Images\Rupee.png" />
-    <Resource Include="Resources\Images\telangana_bank_logo.jpg" />
-    <Resource Include="Resources\Images\telangana_bank_text.jpg" />
-    <Resource Include="Resources\Images\Touch-Screen.png" />
-    <Resource Include="Resources\Images\uinon_logo.jpg" />
-    <Resource Include="Resources\Images\uinon_text.jpg" />
+    <Resource Include="Resources\Images\APEPDCL_Electricity_Bill.png" />
+    <Resource Include="Resources\Images\book_movie_tickets.jpg" />
+    <Resource Include="Resources\Images\data_card_recharge.jpg" />
+    <Resource Include="Resources\Images\DTH_recharge.jpg" />
+    <Resource Include="Resources\Images\electricity.jpg" />
+    <Resource Include="Resources\Images\electricity1.jpg" />
+    <Resource Include="Resources\Images\flightbooking.jpg" />
+    <Resource Include="Resources\Images\four_wheeler_insu.jpg" />
+    <Resource Include="Resources\Images\mobile_services.jpg" />
+    <Resource Include="Resources\Images\mobile_services1.jpg" />
+    <Resource Include="Resources\Images\Pay_utlity_bills.jpg" />
+    <Resource Include="Resources\Images\Pay_utlity_bills1.jpg" />
+    <Resource Include="Resources\Images\Police_E_Chalana.jpg" />
+    <Resource Include="Resources\Images\Police_E_Chalana1.jpg" />
+    <Resource Include="Resources\Images\train_ticket_boking.jpg" />
+    <Resource Include="Resources\Images\travel_services.jpg" />
+    <Resource Include="Resources\Images\two_wheeler_ins.jpg" />
+    <Resource Include="Resources\Images\university_services.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
