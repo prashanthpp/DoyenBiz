@@ -26,9 +26,9 @@
     </Controls:MetroWindow.Background>
     <Grid x:Name="mainGrid" Margin="5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".35*"/>
-            <ColumnDefinition Width=".35*"/>
-            <ColumnDefinition Width=".29*"/>
+            <ColumnDefinition Width=".25*"/>
+            <ColumnDefinition Width=".50*"/>
+            <ColumnDefinition Width=".24*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
@@ -50,31 +50,38 @@
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <WrapPanel  FlowDirection="LeftToRight" HorizontalAlignment="Left">
                     <Label Content="Popular Services" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" />
+                 
+                        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <WrapPanel  FlowDirection="LeftToRight" HorizontalAlignment="Left">
+                            
+                            
+                            <Controls:TransitioningContentControl x:Name="mobile"
+                                                  Transition="Up">
+                            </Controls:TransitioningContentControl>
+                            <Controls:Tile Style="{StaticResource SmallTileStyle}" >
+                                <Controls:Tile.Background>
+                                    <ImageBrush ImageSource="Resources/Images/university_services.jpg"/>
+                                </Controls:Tile.Background>
+                            </Controls:Tile>
+                            <Controls:TransitioningContentControl x:Name="utility"
+                                                  Transition="Up">
+                            </Controls:TransitioningContentControl>
+                            <Controls:Tile Style="{StaticResource LargeTileStyle}" >
+                                <Controls:Tile.Background>
+                                    <ImageBrush ImageSource="Resources/Images/electricity.jpg"/>
+                                </Controls:Tile.Background>
+                            </Controls:Tile>
+                            <Controls:Tile Style="{StaticResource LargeTileStyle}" >
+                                <Controls:Tile.Background>
+                                    <ImageBrush ImageSource="Resources/Images/train_ticket_boking.jpg"/>
+                                </Controls:Tile.Background>
+                            </Controls:Tile>
 
-                    <Controls:TransitioningContentControl x:Name="AIXS"
-                                                  Transition="Up"  >
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="GNI"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="Telangana"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="HFDC"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="CICIC"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="Kanara"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="BankOfIndia"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="HSBC"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
+                        </WrapPanel>
+                    </ScrollViewer>
+
+
+                    
                 </WrapPanel>
             </ScrollViewer>
 
@@ -84,65 +91,38 @@
 
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <WrapPanel  FlowDirection="LeftToRight" HorizontalAlignment="Left">
-                    <Label Content="All Banks                            " Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" />
-                    <Controls:TransitioningContentControl x:Name="mobile"
+                    <Label Content="All Services                     " Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" />
+                    <Controls:TransitioningContentControl x:Name="wheeler"
                                                   Transition="Up">
                     </Controls:TransitioningContentControl>
+                    <Controls:Tile Style="{StaticResource LargeTileStyle}" >
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/flightbooking.jpg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource LargeTileStyle}" >
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/DTH_recharge.jpg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
+                    <Controls:Tile Style="{StaticResource LargeTileStyle}" >
+                        <Controls:Tile.Background>
+                            <ImageBrush ImageSource="Resources/Images/data_card_recharge.jpg"/>
+                        </Controls:Tile.Background>
+                    </Controls:Tile>
                     <Controls:Tile Style="{StaticResource SmallTileStyle}" >
                         <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/university_services.jpg"/>
-                        </Controls:Tile.Background>
-                    </Controls:Tile>
-                    <Controls:TransitioningContentControl x:Name="utility"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:Tile Style="{StaticResource LargeTileStyle}" >
-                        <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/electricity.jpg"/>
+                            <ImageBrush ImageSource="Resources/Images/travel_services.jpg"/>
                         </Controls:Tile.Background>
                     </Controls:Tile>
                     <Controls:Tile Style="{StaticResource LargeTileStyle}" >
                         <Controls:Tile.Background>
-                            <ImageBrush ImageSource="Resources/Images/train_ticket_boking.jpg"/>
+                            <ImageBrush ImageSource="Resources/Images/book_movie_tickets.jpg"/>
                         </Controls:Tile.Background>
                     </Controls:Tile>
-                    <Controls:TransitioningContentControl x:Name="srb"
+                    <Controls:TransitioningContentControl x:Name="traffic"
                                                   Transition="Up">
                     </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="Uinon"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="india_oversi"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="patelco"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="DEUTSCHE"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-
-                    <Controls:TransitioningContentControl x:Name="Alliance"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-
-                    <Controls:TransitioningContentControl x:Name="IndusInd"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="marudhara"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="srb1"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="ocbc"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-                    <Controls:TransitioningContentControl x:Name="orporation"
-                                                  Transition="Up">
-                    </Controls:TransitioningContentControl>
-
-
 
                 </WrapPanel>
             </ScrollViewer>
@@ -166,27 +146,36 @@
 
                 <Controls:TransitioningContentControl x:Name="about"
                                                   Transition="Up" Tag="Text">
-                    <TextBlock TextWrapping="Wrap" Width="230" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}"  >
+                    <TextBlock TextWrapping="Wrap" Width="180" Margin="5,5,5,5" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}"  >
                 This ATM uses a two-factor Biometric Authentication to check you are the account holder. By continuing to use the ATM services, you agree to provide you finger print and you agree to have your picture taken
                     </TextBlock>
                 </Controls:TransitioningContentControl>
                 
             </Border>
             <Border Style="{StaticResource contentBoxHomeBorder}"  Grid.Row="1" Grid.Column="1" Margin="10,0,0,0">
-                <TextBlock TextWrapping="Wrap" Width="90" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}"  >
+                <Controls:TransitioningContentControl x:Name="feedback"
+                                                  Transition="Up" Tag="Text">
+                    <TextBlock TextWrapping="Wrap" Width="80" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}"  Margin="2,2,2,2">
                             Your Feedback is valuable to us <LineBreak />
                 </TextBlock>
+                </Controls:TransitioningContentControl>
             </Border>
-            <Border Style="{StaticResource contentBoxHomeBorder}"  Grid.Row="2" Grid.Column="1"  Margin="10,10,0,0">
-                <TextBlock TextWrapping="Wrap" Width="90" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}"  >
-                            DoyenBiz - Abouris <LineBreak />
+            <Border Style="{StaticResource contentBoxHomeBorder}"  Grid.Row="2" Grid.Column="1"  Margin="10,10,0,0" x:Name="aboutus">
+                <Controls:TransitioningContentControl x:Name="aboutUs"
+                                                  Transition="Up" Tag="Text">
+                    <TextBlock TextWrapping="Wrap" Width="80" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}"  Margin="2,2,2,2" >
+                            DoyenBiz - About Us <LineBreak />
                 </TextBlock>
+                </Controls:TransitioningContentControl>
             </Border>
 
             <Border Style="{StaticResource contentBoxHomeBorder}"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,00,0">
-                <TextBlock TextWrapping="Wrap" Width="210" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}" FontSize="15"  >
+                <Controls:TransitioningContentControl x:Name="needHelp"
+                                                  Transition="Up" Tag="Text">
+                    <TextBlock TextWrapping="Wrap" Width="210" HorizontalAlignment="Left" Style="{StaticResource contentBoxHome}" FontSize="15" Margin="2,2,2,2"  >
                             Need Help Or support? Call us on 1-800-BANKING-KIOSK <LineBreak />
                 </TextBlock>
+                </Controls:TransitioningContentControl>
             </Border>
         </Grid>
         <StackPanel x:Name="footerGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">

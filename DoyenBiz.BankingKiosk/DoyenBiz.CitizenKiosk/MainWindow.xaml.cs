@@ -36,24 +36,9 @@ namespace DoyenBiz.CitizenKiosk
         {
             mobile,
             utility,
-            BankOfIndia,
-            CICIC,
-            HFDC,
-            HSBC,
-            Kanara,
-            Telangana,
-            Uinon,
-
-            Alliance,
-            DEUTSCHE,
-            india_oversi,
-            IndusInd,
-            marudhara,
-            ocbc,
-            orporation,
-            patelco,
-            srb,
-            srb1,
+            wheeler,
+            traffic,
+          
 
         }
 
@@ -69,62 +54,18 @@ namespace DoyenBiz.CitizenKiosk
             m_TimerCollection.Add(TransitionTiles.utility.ToString(),
                         new TransitionDispatcher(utility, TransitionTiles.utility.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
                       "Pay_utlity_bills.jpg", "Pay_utlity_bills1.jpg", TransitionDispatcher.TileSize.Small));
-            m_TimerCollection.Add(TransitionTiles.Telangana.ToString(),
-                     new TransitionDispatcher(Telangana, TransitionTiles.Telangana.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "telangana_bank_logo.jpg", "telangana_bank_text.jpg", TransitionDispatcher.TileSize.Small));
-            m_TimerCollection.Add(TransitionTiles.HFDC.ToString(),
-                     new TransitionDispatcher(HFDC, TransitionTiles.HFDC.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "hfdc_bank.jpg", "hfdc_bank_text.jpg", TransitionDispatcher.TileSize.Large));
-            m_TimerCollection.Add(TransitionTiles.CICIC.ToString(),
-                     new TransitionDispatcher(CICIC, TransitionTiles.CICIC.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "cicic_logo.jpg", "cicic.jpg", TransitionDispatcher.TileSize.Large));
-            m_TimerCollection.Add(TransitionTiles.Kanara.ToString(),
-                   new TransitionDispatcher(Kanara, TransitionTiles.Kanara.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                    "kanara_logo.jpg", "kanara_text.jpg", TransitionDispatcher.TileSize.Small));
-            m_TimerCollection.Add(TransitionTiles.BankOfIndia.ToString(),
-                   new TransitionDispatcher(BankOfIndia, TransitionTiles.BankOfIndia.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                    "bank_of_india_logo.jpg", "bank_of_india-text.jpg", TransitionDispatcher.TileSize.Large));
-            m_TimerCollection.Add(TransitionTiles.HSBC.ToString(),
-                    new TransitionDispatcher(HSBC, TransitionTiles.HSBC.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "hsbc_logo.jpg", "hsbc_text.jpg", TransitionDispatcher.TileSize.Small));
-
-
-            m_TimerCollection.Add(TransitionTiles.Uinon.ToString(),
-                  new TransitionDispatcher(Uinon, TransitionTiles.Uinon.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                   "uinon_logo.jpg", "uinon_logo.jpg", TransitionDispatcher.TileSize.Small));
-
-            m_TimerCollection.Add(TransitionTiles.Alliance.ToString(),
-                    new TransitionDispatcher(Alliance, TransitionTiles.Alliance.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "Alliance_bank_logo.jpg", "Alliance_bank_text.jpg", TransitionDispatcher.TileSize.Large));
-            m_TimerCollection.Add(TransitionTiles.DEUTSCHE.ToString(),
-                    new TransitionDispatcher(DEUTSCHE, TransitionTiles.DEUTSCHE.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "DEUTSCHE_Logo.jpg", "DEUTSCHE_text.jpg", TransitionDispatcher.TileSize.Small));
-            m_TimerCollection.Add(TransitionTiles.india_oversi.ToString(),
-                    new TransitionDispatcher(india_oversi, TransitionTiles.india_oversi.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "india_oversi_bank_logo.jpg", "india_oversi_bank_text.jpg", TransitionDispatcher.TileSize.Small));
-            m_TimerCollection.Add(TransitionTiles.IndusInd.ToString(),
-                    new TransitionDispatcher(IndusInd, TransitionTiles.IndusInd.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "IndusInd_bank_logo.jpg", "IndusInd_bank_text.jpg", TransitionDispatcher.TileSize.Small));
-            m_TimerCollection.Add(TransitionTiles.marudhara.ToString(),
-                    new TransitionDispatcher(marudhara, TransitionTiles.marudhara.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "marudhara_logo.jpg", "marudhara_text.jpg", TransitionDispatcher.TileSize.Small));
-            m_TimerCollection.Add(TransitionTiles.ocbc.ToString(),
-                    new TransitionDispatcher(ocbc, TransitionTiles.ocbc.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "ocbc.jpg", "ocbc_text.jpg", TransitionDispatcher.TileSize.Large));
-            m_TimerCollection.Add(TransitionTiles.orporation.ToString(),
-                    new TransitionDispatcher(orporation, TransitionTiles.orporation.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "orporation.jpg", "orporation_text.jpg", TransitionDispatcher.TileSize.Small));
-            m_TimerCollection.Add(TransitionTiles.patelco.ToString(),
-                    new TransitionDispatcher(patelco, TransitionTiles.patelco.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "patelco_logo.jpg", "patelco_text.jpg", TransitionDispatcher.TileSize.Large));
-            m_TimerCollection.Add(TransitionTiles.srb.ToString(),
-                    new TransitionDispatcher(srb, TransitionTiles.srb.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "srb_logo.jpg", "srb_text.jpg", TransitionDispatcher.TileSize.Small));
-            m_TimerCollection.Add(TransitionTiles.srb1.ToString(),
-                    new TransitionDispatcher(srb1, TransitionTiles.srb1.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "srb_logo.jpg", "srb_text.jpg", TransitionDispatcher.TileSize.Small));
+            m_TimerCollection.Add(TransitionTiles.wheeler.ToString(),
+                     new TransitionDispatcher(wheeler, TransitionTiles.wheeler.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
+                     "four_wheeler_insu.jpg", "two_wheeler_ins.jpg", TransitionDispatcher.TileSize.Large));
+            m_TimerCollection.Add(TransitionTiles.traffic.ToString(),
+                     new TransitionDispatcher(traffic, TransitionTiles.traffic.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
+                     "Police_E_Chalana.jpg", "Police_E_Chalana1.jpg", TransitionDispatcher.TileSize.Large));
+         
 
             var txtDispatcher = new DispatcherTimer(TimeSpan.FromSeconds(3), DispatcherPriority.Normal, TransitionText, this.Dispatcher);
+            var txtDispatcher1 = new DispatcherTimer(TimeSpan.FromSeconds(4), DispatcherPriority.Normal, TransitionText1, this.Dispatcher);
+            var txtDispatcher2 = new DispatcherTimer(TimeSpan.FromSeconds(5), DispatcherPriority.Normal, TransitionText2, this.Dispatcher);
+            var txtDispatcher3 = new DispatcherTimer(TimeSpan.FromSeconds(4), DispatcherPriority.Normal, TransitionText3, this.Dispatcher);
 
             rndInterval = new Random();
         }
@@ -140,12 +81,12 @@ namespace DoyenBiz.CitizenKiosk
             tile.Click += Tile_Click;
             if (transitionInfo.TransTileSize == TransitionDispatcher.TileSize.Large)
             {
-                tile.Width = 240;
+                tile.Width = 265;
                 tile.Height = 125;
             }
             else
             {
-                tile.Width = 120;
+                tile.Width = 133;
                 tile.Height = 125;
             }
             var transitioning = transitionInfo.TransControl;
@@ -171,11 +112,12 @@ namespace DoyenBiz.CitizenKiosk
         {
             var txtContent = new TextBlock();
             txtContent.TextWrapping = TextWrapping.Wrap;
-            txtContent.Width =230;
+            txtContent.Width = 180;
             txtContent.HorizontalAlignment = HorizontalAlignment.Left;
             txtContent.FontFamily = new FontFamily("Segoe UI");
             txtContent.FontSize = 15;
             txtContent.TextAlignment = TextAlignment.Justify;
+            txtContent.Margin = new Thickness(5, 5, 5, 5);
 
 
             if (about.Tag.ToString() == "Text")
@@ -192,6 +134,56 @@ namespace DoyenBiz.CitizenKiosk
             }
         }
 
+
+        void TransitionText1(object sender, EventArgs e)
+        {
+            var txtContent = new TextBlock();
+            txtContent.TextWrapping = TextWrapping.Wrap;
+            txtContent.Width = 80;
+            txtContent.HorizontalAlignment = HorizontalAlignment.Left;
+            txtContent.FontFamily = new FontFamily("Segoe UI");
+            txtContent.FontSize = 15;
+            txtContent.TextAlignment = TextAlignment.Justify;
+            txtContent.Margin = new Thickness(2,2,2,2);
+
+
+            txtContent.Text = "Your Feedback is valuable to us";
+            feedback.Content = txtContent;
+        }
+
+
+        void TransitionText2(object sender, EventArgs e)
+        {
+            var txtContent = new TextBlock();
+            txtContent.TextWrapping = TextWrapping.Wrap;
+            txtContent.Width = 80;
+            txtContent.HorizontalAlignment = HorizontalAlignment.Left;
+            txtContent.FontFamily = new FontFamily("Segoe UI");
+            txtContent.FontSize = 15;
+            txtContent.TextAlignment = TextAlignment.Justify;
+            txtContent.Margin = new Thickness(2,2,2,2);
+
+
+            txtContent.Text = "DoyenBiz - About Us";
+            aboutUs.Content = txtContent;
+        }
+
+
+        void TransitionText3(object sender, EventArgs e)
+        {
+            var txtContent = new TextBlock();
+            txtContent.TextWrapping = TextWrapping.Wrap;
+            txtContent.Width = 210;
+            txtContent.HorizontalAlignment = HorizontalAlignment.Left;
+            txtContent.FontFamily = new FontFamily("Segoe UI");
+            txtContent.FontSize = 15;
+            txtContent.TextAlignment = TextAlignment.Justify;
+            txtContent.Margin = new Thickness(2, 2, 2, 2);
+
+
+            txtContent.Text = "Need Help Or support? Call us on 1-800-BANKING-KIOSK";
+            needHelp.Content = txtContent;
+        }
 
         private void Tile_Click(object sender, RoutedEventArgs e)
         {
