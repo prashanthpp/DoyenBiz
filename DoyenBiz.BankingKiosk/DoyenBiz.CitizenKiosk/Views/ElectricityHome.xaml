@@ -19,9 +19,9 @@
         xmlns:viewModels="clr-namespace:DoyenBiz.CitizenKiosk.ViewModels"
         xmlns:Views="clr-namespace:DoyenBiz.CitizenKiosk.Views"
         IgnoreTaskbarOnMaximize="True">
-    <!--<Window.DataContext>
-        <viewModels:MainViewModel/>
-    </Window.DataContext>-->
+    <Window.DataContext>
+        <viewModels:ElectricityHomeViewModel/>
+    </Window.DataContext>
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
