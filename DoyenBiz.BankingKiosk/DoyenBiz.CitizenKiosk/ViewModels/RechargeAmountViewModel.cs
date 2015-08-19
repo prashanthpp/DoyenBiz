@@ -22,6 +22,7 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
 
         private ICommand m_AmountButtonCommand;
         private string selectedAmount;
+        public static string _rechargeAmount;
         private ICommand m_KeyButtonCommand;
 
         public ICommand AmountChangeCommand
@@ -64,7 +65,7 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
             ButtonCommand = new RelayCommand(new Action<object>(btnAmount_Click));
             AmountChangeCommand = new RelayCommand(new Action<object>(btnAmountChange_Click));
             KeyButtonCommand = new RelayCommand(new Action<object>(KeyButtonCommand_Click));
-            Progress += 60;
+            Progress += 40;
 
         }
 
@@ -99,47 +100,7 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
             }
             else
             {
-                bool tranSuccess = false;
-                try
-                {
-                    string servicesUri = ConfigurationManager.AppSettings["servicesUri"].ToString();
-                    string kioskId = ConfigurationManager.AppSettings["kioskID"].ToString();
-                    string queryUri = servicesUri + "?service=CitizenServices&action=RechargeMobile&kioskid=" + kioskId + "&rechargeamt=" + enteredAmount +
-                                                                                "&depositedamt=100&rechargemobilenumber=" + MobileNumberViewModel._mobileNumber;
-                    HttpWebRequest myRequest =
-                      (HttpWebRequest)WebRequest.Create(queryUri);
-                    myRequest.Method = "POST";
-                    myRequest.Accept = "application/json";
-                    using (var resp = (HttpWebResponse)myRequest.GetResponse())
-                    {
-                        using (var reader = new StreamReader(resp.GetResponseStream()))
-                        {
-                            string text = reader.ReadToEnd();
-                            var jsonDe = JsonConvert.DeserializeObject(text);
-                            JObject jOb = (JObject)jsonDe;
-                            string transactionStatus = jOb["TransactionStatus"].ToString();
-
-                            if (transactionStatus.ToLower() == "recharge success")
-                            {
-                                tranSuccess = true;
-                                await CurrentWindow.ShowMessageAsync("Transaction Successful...", "Please check SMS with updated balance from your service provider");
-                            }
-                            else
-                            {
-                                tranSuccess = false;
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    tranSuccess = false;
-                }
-                if (!tranSuccess)
-                {
-                    await CurrentWindow.ShowMessageAsync("Transaction failed", "A credit note will be sent to your mobile number for the amount deposited, you can use the credit note to try recharging  now or later");
-                    //NavigationServiceHelper.Navigate(, CurrentWindow, NavigationServiceHelper.TargetWindow.MobileServices);
-                }
+                _rechargeAmount = SelectedAmount;
                 ToggleFlyout(1);
                 ToggleFlyout(2);
             }
