@@ -30,6 +30,13 @@ namespace DoyenBiz.CitizenKiosk.Utilities
             tWindow.Show();
             currentWindow.Hide();
         }
+        public static void Navigate(string text, MetroWindow currentWindow, TargetWindow targetWindow)
+        {
+            var tagInfo = text;
+            var tWindow = GetTargetWindowRef(targetWindow);
+            tWindow.Show();
+            currentWindow.Hide();
+        }
 
         private static MetroWindow GetTargetWindowRef(TargetWindow tWindow)
         {

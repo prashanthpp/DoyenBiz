@@ -28,6 +28,7 @@ namespace DoyenBiz.CitizenKiosk.Views
             InitializeComponent();
             var viewModel = (new ElectricityServiceViewModel());
             viewModel.InputBox = this.inputMobileBox;
+            viewModel.ServiceInputBox = this.inputServiceNumber;
             this.DataContext = viewModel;
             inputMobileBox.Focus();
         }

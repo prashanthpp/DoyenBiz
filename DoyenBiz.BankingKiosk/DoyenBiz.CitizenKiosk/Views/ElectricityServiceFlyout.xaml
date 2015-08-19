@@ -50,7 +50,7 @@
                         BorderThickness="2"   Grid.Row="4" Margin="0,20,0,0"
                         Style="{StaticResource MetroButton}"
                         Content="Review and Pay Bill"
-                        VerticalAlignment="Top"  Command="{Binding ButtonCommand}"/>
+                        VerticalAlignment="Top"  Command="{Binding ButtonCommand}" CommandParameter="Pay"/>
                 <Grid Grid.Row="5" VerticalAlignment="Top" Margin="0,50,0,0">
                     <StackPanel Width="400" Height="500" HorizontalAlignment="Center" VerticalAlignment="Top" >
                         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Disabled">
