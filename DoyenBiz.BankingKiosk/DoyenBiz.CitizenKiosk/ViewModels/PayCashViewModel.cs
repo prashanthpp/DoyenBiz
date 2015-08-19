@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using MahApps.Metro.Controls.Dialogs;
+using DoyenBiz.CitizenKiosk.Utilities;
 
 namespace DoyenBiz.CitizenKiosk.ViewModels
 {
@@ -49,6 +50,7 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
                             await Task.Delay(1000);
                             Progress += 20;
                             await CurrentWindow.ShowMessageAsync("Transaction Successful...", "Please check SMS with updated balance from your service provider");
+                            NavigationServiceHelper.Navigate("Success", CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
                         }
                         else
                         {
@@ -64,7 +66,7 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
             if (!tranSuccess)
             {
                 await CurrentWindow.ShowMessageAsync("Transaction failed", "A credit note will be sent to your mobile number for the amount deposited, you can use the credit note to try recharging  now or later");
-                //NavigationServiceHelper.Navigate(, CurrentWindow, NavigationServiceHelper.TargetWindow.MobileServices);
+                NavigationServiceHelper.Navigate("Success", CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
             }
         }
     }
