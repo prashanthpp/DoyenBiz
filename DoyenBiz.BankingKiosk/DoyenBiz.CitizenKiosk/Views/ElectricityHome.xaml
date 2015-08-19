@@ -1,0 +1,156 @@
+﻿<Controls:MetroWindow x:Class="DoyenBiz.CitizenKiosk.Views.ElectricityHome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoyenBiz.CitizenKiosk"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="Electricity Home"
+        ShowMinButton="False"
+        ShowMaxRestoreButton="False"
+        ShowCloseButton="False"
+        TitleCaps="False"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None"
+        xmlns:viewModels="clr-namespace:DoyenBiz.CitizenKiosk.ViewModels"
+        xmlns:Views="clr-namespace:DoyenBiz.CitizenKiosk.Views"
+        IgnoreTaskbarOnMaximize="True">
+    <!--<Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>-->
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
+    </Controls:MetroWindow.Background>
+
+    <Grid x:Name="mainGrid" Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width=".2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".6*"/>
+            <RowDefinition Height=".2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <Label Content="Select your ERO Area" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Viewbox HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+            </Viewbox>
+        </Grid>
+
+        <Controls:MetroAnimatedSingleRowTabControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="MainTabControl">
+            <TabItem Header="Hyderabad/Secunderabad">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition Width=".25*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".25*"/>
+                        <RowDefinition Height=".25*"/>
+                        <RowDefinition Height=".25*"/>
+                        <RowDefinition Height=".25*"/>
+                    </Grid.RowDefinitions>
+                    <Controls:Tile  Grid.Row="0" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Green Lands</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 1</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="0" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Sultan Bazar</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 2</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="0" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Salar Jung</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 3</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="0" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Azamabad</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 4</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="1" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Mint Compound</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 5</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="1" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Paradise</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 6</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="1" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Indira Park</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 7</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="1" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Chanchalguda</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 8</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="2" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">A.C.Guards</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 9</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="2" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Sithaphalmand</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 10</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="2" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Banjara Hills</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 11</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="2" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Bowenpally</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 12</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="3" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Sanath Nagar</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 50</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                </Grid>
+                <!--<exampleViews:ButtonsExample DataContext="{Binding}" />-->
+            </TabItem>
+            <TabItem Header="Ranga Reddy">
+
+                <!--<exampleViews:ButtonsExample DataContext="{Binding}" />-->
+            </TabItem>
+        </Controls:MetroAnimatedSingleRowTabControl>
+
+        <StackPanel x:Name="footerGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
+            <Label x:Name="footerBalanceLabel" Content="Kiosk Pre-Paid Balance" FontSize="24"></Label>
+            <Label x:Name="footerBalanceCurrency" Content="INR" FontSize="24" Foreground="Green"></Label>
+            <TextBlock x:Name="footerBalanceValue" VerticalAlignment="Center" Text="{Binding Balance,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="24" Foreground="Green"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Controls:MetroWindow>

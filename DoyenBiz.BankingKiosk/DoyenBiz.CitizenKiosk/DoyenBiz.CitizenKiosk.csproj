@@ -87,6 +87,9 @@
     <Compile Include="ViewModels\RechargeAmountViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\TransactionHomeViewModel.cs" />
+    <Compile Include="Views\ElectricityHome.xaml.cs">
+      <DependentUpon>ElectricityHome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MobileNumber.xaml.cs">
       <DependentUpon>MobileNumber.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ElectricityHome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MobileNumber.xaml">
       <SubType>Designer</SubType>
