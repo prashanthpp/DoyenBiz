@@ -36,5 +36,15 @@ namespace DoyenBiz.CitizenKiosk.Views
         {
             NavigationServiceHelper.Navigate((sender as Button), BaseViewModel.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
         }
+
+        private void inputServiceNumber_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ((ElectricityServiceViewModel)this.DataContext).FocusBox = inputServiceNumber;
+        }
+
+        private void inputMobileBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ((ElectricityServiceViewModel)this.DataContext).FocusBox = inputMobileBox;
+        }
     }
 }

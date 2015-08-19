@@ -33,6 +33,12 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
             set;
         }
 
+        public TextBox FocusBox
+        {
+            get;
+            set;
+        }
+
         public ElectricityServiceViewModel()
         {
             ButtonCommand = new RelayCommand(new Action<object>(GoButton_Click));
@@ -54,24 +60,26 @@ namespace DoyenBiz.CitizenKiosk.ViewModels
             }
             else
             {
-                _mobileNumber = enteredNumber;
-                ToggleFlyout(0);
-                ToggleFlyout(1);
+               
             }
         }
 
         public async void KeyButtonCommand_Click(object inputBoxValue)
         {
-            if (inputBoxValue.ToString() != "backspace")
-                InputBox.Text = InputBox.Text + inputBoxValue.ToString();
-            else
+            if (inputBoxValue.ToString() != "backspace" && inputBoxValue.ToString() != "space")
+                FocusBox.Text = FocusBox.Text + inputBoxValue.ToString();
+            else if(inputBoxValue.ToString() == "backspace")
             {
                 if (!string.IsNullOrEmpty(InputBox.Text))
                 {
-                    InputBox.Text = InputBox.Text.Remove(InputBox.Text.Length - 1, 1);
+                    FocusBox.Text = FocusBox.Text.Remove(FocusBox.Text.Length - 1, 1);
                 }
             }
+            else if (inputBoxValue.ToString() == "space")
+            {
 
+                FocusBox.Text = FocusBox.Text + " ";
+            }
         }
     }
 }

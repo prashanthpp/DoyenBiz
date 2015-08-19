@@ -20,38 +20,38 @@
             <RowDefinition Height=".1*"/>
             <RowDefinition Height=".9*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" >
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
             <Button Background="Transparent"  Margin="0,0" Click="Home_Click" Width="80" HorizontalAlignment="Left">
                 <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
             </Button>
         </StackPanel>
         <Grid x:Name="inputPIN" Grid.Row="1">
-            <Grid HorizontalAlignment="Center" Margin="50">
+            <Grid HorizontalAlignment="Center" >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height=".3*"/>
-                    <RowDefinition Height=".2*"/>
-                    <RowDefinition Height=".5*"/>
-                    <RowDefinition Height=".5*"/>
-                    <RowDefinition Height=".5*"/>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height=".1*"/>
                     <RowDefinition Height=".5*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Enter your Service Number</TextBlock>
+                <TextBlock Grid.Row="0" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black" VerticalAlignment="Top">Enter your Service Number</TextBlock>
                     <TextBox x:Name="inputServiceNumber" Width="400" Height="50" TextAlignment="Right" Grid.Row="1" 
-                             VerticalContentAlignment="Center" 
-                             MaxLength="10" FontSize="30"
+                             VerticalContentAlignment="Top" 
+                             MaxLength="10" FontSize="30" GotFocus="inputServiceNumber_GotFocus"
                              />
-                <TextBlock Grid.Row="3" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black">Enter your Service Number</TextBlock>
-                <TextBox x:Name="inputMobileBox" Width="400" Height="50" TextAlignment="Right" Grid.Row="4" 
-                             VerticalContentAlignment="Center" 
-                             MaxLength="10" FontSize="30"
+                <TextBlock Grid.Row="2" Style="{StaticResource instructionsText}" TextWrapping="WrapWithOverflow" Foreground="Black" VerticalAlignment="Top" Margin="0,20,0,0">Enter your Mobile Number</TextBlock>
+                <TextBox x:Name="inputMobileBox" Width="400" Height="50" TextAlignment="Right" Grid.Row="3" 
+                             VerticalContentAlignment="Top" 
+                             MaxLength="10" FontSize="30" GotFocus="inputMobileBox_GotFocus"
                              />
 
-                <Button x:Name="validatePINButton" Width="100" Height="50"
-                        BorderThickness="2"   Grid.Row="5" 
+                <Button x:Name="validatePINButton" Width="200" Height="50"
+                        BorderThickness="2"   Grid.Row="4" Margin="0,20,0,0"
                         Style="{StaticResource MetroButton}"
-                        Margin="600,0,0,0" Content="Review and Pay Bill"
-                        VerticalAlignment="Center"  Command="{Binding ButtonCommand}"/>
-                <Grid Grid.Row="6">
+                        Content="Review and Pay Bill"
+                        VerticalAlignment="Top"  Command="{Binding ButtonCommand}"/>
+                <Grid Grid.Row="5" VerticalAlignment="Top" Margin="0,50,0,0">
                     <StackPanel Width="400" Height="500" HorizontalAlignment="Center" VerticalAlignment="Top" >
                         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Disabled">
                             <WrapPanel>
@@ -66,7 +66,8 @@
                                 <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="8" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="8"/>
                                 <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="9" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="9"/>
                                 <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="0" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="0"/>
-                                <Button Width="220" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="backspace" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="backspace"/>
+                                <Button Width="100" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="space" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="space"/>
+                                <Button Width="110" Height="50" BorderThickness="2" Margin="10,10,10,10"  Style="{StaticResource MetroButton}" Content="backspace" VerticalAlignment="Center"  Command="{Binding KeyButtonCommand}" CommandParameter="backspace"/>
                             </WrapPanel>
                         </ScrollViewer>
                     </StackPanel>
