@@ -30,6 +30,7 @@ namespace DoyenBiz.CitizenKiosk.Views
             InitializeComponent();
 
             BindDataTable();
+            this.DataContext  = (new PayCashViewModel());
         }
 
         private void BindDataTable()

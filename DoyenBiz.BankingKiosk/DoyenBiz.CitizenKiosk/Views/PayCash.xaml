@@ -39,7 +39,7 @@
                         BorderThickness="2" 
                         Style="{StaticResource MetroButton}"
                         Margin="600,0,0,0" Content="Go"
-                        VerticalAlignment="Center"  />
+                        VerticalAlignment="Center"  Command="{Binding ButtonCommand}" CommandParameter="Cash" />
             </Grid>
         </Grid>
     </Grid>
