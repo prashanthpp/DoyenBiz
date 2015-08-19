@@ -142,8 +142,86 @@
                 <!--<exampleViews:ButtonsExample DataContext="{Binding}" />-->
             </TabItem>
             <TabItem Header="Ranga Reddy">
-
-                <!--<exampleViews:ButtonsExample DataContext="{Binding}" />-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition Width=".25*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".25*"/>
+                        <RowDefinition Height=".25*"/>
+                        <RowDefinition Height=".25*"/>
+                        <RowDefinition Height=".25*"/>
+                    </Grid.RowDefinitions>
+                    <Controls:Tile  Grid.Row="0" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Saroor Nagar</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 13</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="0" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Champapet</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 14</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="0" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Kukatpally</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 15</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="0" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Habsiguda</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 311</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="1" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Sainikpuri</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 312</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="1" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Jeedimetla</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 315</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="1" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Medchal</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 316</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="1" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Vikarabad</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 318</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="2" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Tandoor</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 319</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="2" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Gaganpahad</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 322</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                    <Controls:Tile  Grid.Row="2" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}">
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Malkajgiri</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 324</TextBlock>
+                        </Grid>
+                    </Controls:Tile>
+                </Grid>
             </TabItem>
         </Controls:MetroAnimatedSingleRowTabControl>
 
