@@ -18,6 +18,8 @@
         WindowStyle="None"
         xmlns:viewModels="clr-namespace:DoyenBiz.CitizenKiosk.ViewModels"
         xmlns:Views="clr-namespace:DoyenBiz.CitizenKiosk.Views"
+                                            xmlns:kioskWindows="clr-namespace:DoyenBiz.CitizenKiosk.Views"
+
         IgnoreTaskbarOnMaximize="True">
     <Window.DataContext>
         <viewModels:ElectricityHomeViewModel/>
@@ -26,6 +28,12 @@
         <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
     </Controls:MetroWindow.Background>
 
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl x:Name="flyoutsControl">
+            <kioskWindows:ElectricityServiceFlyout Position="Right"  IsModal="True" CloseButtonVisibility="Hidden" />
+        </Controls:FlyoutsControl>
+
+    </Controls:MetroWindow.Flyouts>
     <Grid x:Name="mainGrid" Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".4*"/>
@@ -60,79 +68,79 @@
                         <RowDefinition Height=".25*"/>
                         <RowDefinition Height=".25*"/>
                     </Grid.RowDefinitions>
-                    <Controls:Tile  Grid.Row="0" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="0" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
-                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Green Lands</TextBlock>
+                            <TextBlock Style="{StaticResource ElectricityRegionTileTitle}" >Green Lands</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 1</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="0" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="0" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Sultan Bazar</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 2</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="0" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="0" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Salar Jung</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 3</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="0" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="0" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Azamabad</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 4</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="1" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="1" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Mint Compound</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 5</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="1" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="1" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Paradise</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 6</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="1" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="1" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Indira Park</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 7</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="1" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="1" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Chanchalguda</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 8</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="2" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="2" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">A.C.Guards</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 9</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="2" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="2" Grid.Column="1" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Sithaphalmand</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 10</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="2" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="2" Grid.Column="2" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Banjara Hills</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 11</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="2" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="2" Grid.Column="3" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Bowenpally</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 12</TextBlock>
                         </Grid>
                     </Controls:Tile>
-                    <Controls:Tile  Grid.Row="3" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}">
+                    <Controls:Tile  Grid.Row="3" Grid.Column="0" Style="{StaticResource ElectricityRegionsTile}" Click="Tile_Click">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center">
                             <TextBlock Style="{StaticResource ElectricityRegionTileTitle}">Sanath Nagar</TextBlock>
                             <TextBlock Style="{StaticResource ElectricityRegionTileCode}">ERO Code : 50</TextBlock>

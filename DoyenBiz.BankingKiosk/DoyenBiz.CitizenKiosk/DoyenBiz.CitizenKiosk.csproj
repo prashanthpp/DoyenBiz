@@ -82,6 +82,7 @@
     <Compile Include="Utilities\NavigationServiceHelper.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ElectricityHomeViewModel.cs" />
+    <Compile Include="ViewModels\ElectricityServiceViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MobileNumberViewModel.cs" />
     <Compile Include="ViewModels\PayCashViewModel.cs" />
@@ -90,6 +91,9 @@
     <Compile Include="ViewModels\TransactionHomeViewModel.cs" />
     <Compile Include="Views\ElectricityHome.xaml.cs">
       <DependentUpon>ElectricityHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ElectricityServiceFlyout.xaml.cs">
+      <DependentUpon>ElectricityServiceFlyout.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MobileNumber.xaml.cs">
       <DependentUpon>MobileNumber.xaml</DependentUpon>
@@ -114,6 +118,10 @@
     <Page Include="Views\ElectricityHome.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ElectricityServiceFlyout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MobileNumber.xaml">
       <SubType>Designer</SubType>

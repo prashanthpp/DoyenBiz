@@ -26,6 +26,12 @@ namespace DoyenBiz.CitizenKiosk.Views
         {
             InitializeComponent();
             this.DataContext = (new ElectricityHomeViewModel());
+            BaseViewModel.CurrentWindow = this;
+        }
+
+        private void Tile_Click(object sender, RoutedEventArgs e)
+        {
+            ((BaseViewModel)this.DataContext).ToggleFlyout(0);
         }
     }
 }
