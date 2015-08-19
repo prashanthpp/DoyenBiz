@@ -53,8 +53,8 @@
             </Viewbox>
         </Grid>
 
-        <Controls:MetroAnimatedSingleRowTabControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="MainTabControl">
-            <TabItem Header="Hyderabad/Secunderabad">
+        <TabControl Controls:TabControlHelper.IsUnderlined="True" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="MainTabControl">
+            <Controls:MetroTabItem Header="Hyderabad/Secunderabad" TextElement.Foreground="Black">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=".25*"/>
@@ -148,8 +148,8 @@
                     </Controls:Tile>
                 </Grid>
                 <!--<exampleViews:ButtonsExample DataContext="{Binding}" />-->
-            </TabItem>
-            <TabItem Header="Ranga Reddy">
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Ranga Reddy">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=".25*"/>
@@ -230,8 +230,8 @@
                         </Grid>
                     </Controls:Tile>
                 </Grid>
-            </TabItem>
-        </Controls:MetroAnimatedSingleRowTabControl>
+            </Controls:MetroTabItem>
+        </TabControl>
 
         <StackPanel x:Name="footerGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
             <Label x:Name="footerBalanceLabel" Content="Kiosk Pre-Paid Balance" FontSize="24"></Label>
