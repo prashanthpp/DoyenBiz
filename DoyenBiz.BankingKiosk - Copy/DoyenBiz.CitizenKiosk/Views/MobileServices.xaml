@@ -1,0 +1,126 @@
+﻿<Controls:MetroWindow x:Class="DoyenBiz.CitizenKiosk.MobileServices"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoyenBiz.CitizenKiosk"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="Mobile Services"
+        ShowMinButton="False"
+        ShowMaxRestoreButton="False"
+        ShowCloseButton="False"
+        TitleCaps="False"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None"
+        IgnoreTaskbarOnMaximize="True">
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="/Resources/Images/ScreenBackground.jpg"/>
+    </Controls:MetroWindow.Background>
+    <Grid x:Name="mainGrid" Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".6*"/>
+            <ColumnDefinition Width=".4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".6*"/>
+            <RowDefinition Height=".2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Content="Select your Mobile Service Provider" Style="{StaticResource TitleTextLong}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Viewbox HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Image x:Name="companyLogo" Source="/Resources/Images/icici.png" Margin="0,0,20,0"/>
+            </Viewbox>
+        </Grid>
+
+        <Grid x:Name="servicesImages" Grid.Row="1" Grid.Column="0">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <WrapPanel>
+                    <Controls:Tile Style="{StaticResource SmallTileStyle}" Click="provider_click" Tag="Airtel">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+                <Controls:Tile Style="{StaticResource SmallTileStyle}">
+                    <Controls:Tile.Background>
+                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
+                    </Controls:Tile.Background>
+                </Controls:Tile>
+            </WrapPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="1">
+            <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
+                    <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}">
+                Welcome to TAJ DECCAN, Banjara Hills, Hyderabad Citizen Kiosk.
+                    <LineBreak/>
+                    <LineBreak/>
+                 This Citizen Kiosk is managed by DOYENBIZ. For any queries or complaints, please contact us at 9000090000.
+                    <LineBreak/>
+                    </TextBlock>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        <StackPanel x:Name="footerGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
+            <Label x:Name="footerBalanceLabel" Content="Kiosk Pre-Paid Balance" FontSize="24"></Label>
+            <Label x:Name="footerBalanceCurrency" Content="INR" FontSize="24" Foreground="Green"></Label>
+            <Label x:Name="footerBalanceValue" Content="45540" FontSize="24" Foreground="Green"></Label>
+        </StackPanel>
+    </Grid>
+</Controls:MetroWindow>

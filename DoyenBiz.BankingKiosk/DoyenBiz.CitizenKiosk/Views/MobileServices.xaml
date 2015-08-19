@@ -42,84 +42,51 @@
             </Viewbox>
         </Grid>
 
-        <Grid x:Name="servicesImages" Grid.Row="1" Grid.Column="0">
+        <Grid x:Name="servicesImages" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
-            <WrapPanel>
-                    <Controls:Tile Style="{StaticResource SmallTileStyle}" Click="provider_click" Tag="Airtel">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/icici.png"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-                <Controls:Tile Style="{StaticResource SmallTileStyle}">
-                    <Controls:Tile.Background>
-                        <ImageBrush ImageSource="/Resources/Images/Axis.jpeg"/>
-                    </Controls:Tile.Background>
-                </Controls:Tile>
-            </WrapPanel>
+                <WrapPanel   HorizontalAlignment="Center" Width="700">
+
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_1_1"
+                                                  Transition="Up"  >
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_1_2"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_1_3"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_2_1"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_2_2"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_2_3"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_2_4"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_3_1"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_3_2"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_4_1"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_4_2"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_4_3"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                    <Controls:TransitioningContentControl x:Name="MobileServiceProvider_4_4"
+                                                  Transition="Up">
+                    </Controls:TransitioningContentControl>
+                </WrapPanel>
             </ScrollViewer>
-        </Grid>
-        <Grid x:Name="rightStaticText" Grid.Row="1" Grid.Column="1">
-            <Border Style="{StaticResource contentBoxBorder}" Margin="5,5,5,20">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
-                    <TextBlock TextWrapping="Wrap" Style="{StaticResource contentBoxText}">
-                Welcome to TAJ DECCAN, Banjara Hills, Hyderabad Citizen Kiosk.
-                    <LineBreak/>
-                    <LineBreak/>
-                 This Citizen Kiosk is managed by DOYENBIZ. For any queries or complaints, please contact us at 9000090000.
-                    <LineBreak/>
-                    </TextBlock>
-                </ScrollViewer>
-            </Border>
         </Grid>
         <StackPanel x:Name="footerGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
             <Label x:Name="footerBalanceLabel" Content="Kiosk Pre-Paid Balance" FontSize="24"></Label>
