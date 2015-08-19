@@ -189,5 +189,10 @@ namespace DoyenBiz.CitizenKiosk
         {
             NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.MobileServices);
         }
+
+        private void Tile_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.MobileServices);
+        }
     }
 }

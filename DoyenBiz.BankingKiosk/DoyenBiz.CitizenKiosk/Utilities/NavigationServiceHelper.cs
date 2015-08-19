@@ -19,7 +19,8 @@ namespace DoyenBiz.CitizenKiosk.Utilities
         {
             MobileServices,
             TransactionHome,
-            HomePage
+            HomePage,
+            ElectricityHome
         }
 
         public static void Navigate(Button element, MetroWindow currentWindow, TargetWindow targetWindow)
@@ -40,6 +41,8 @@ namespace DoyenBiz.CitizenKiosk.Utilities
                     return new TransactionHome();
                 case TargetWindow.HomePage:
                     return new MainWindow();
+                case TargetWindow.ElectricityHome:
+                    return new ElectricityHome();
                 default:
                     throw new System.NotImplementedException("Invalid target window!");
 

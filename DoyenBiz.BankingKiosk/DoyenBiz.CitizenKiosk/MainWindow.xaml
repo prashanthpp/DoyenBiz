@@ -66,7 +66,7 @@
                             <Controls:TransitioningContentControl x:Name="utility"
                                                   Transition="Up">
                             </Controls:TransitioningContentControl>
-                            <Controls:Tile Style="{StaticResource LargeTileStyle}" >
+                            <Controls:Tile Style="{StaticResource LargeTileStyle}" Click="Tile_Click_1">
                                 <Controls:Tile.Background>
                                     <ImageBrush ImageSource="Resources/Images/electricity.jpg"/>
                                 </Controls:Tile.Background>

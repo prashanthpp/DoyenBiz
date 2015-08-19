@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using DoyenBiz.CitizenKiosk.ViewModels;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace DoyenBiz.CitizenKiosk.Views
         public ElectricityHome()
         {
             InitializeComponent();
+            this.DataContext = (new ElectricityHomeViewModel());
         }
     }
 }

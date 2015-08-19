@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Utilities\NavigationServiceHelper.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ElectricityHomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MobileNumberViewModel.cs" />
     <Compile Include="ViewModels\PayCashViewModel.cs" />
