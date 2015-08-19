@@ -18,7 +18,8 @@ namespace DoyenBiz.CitizenKiosk.Utilities
         public enum TargetWindow
         {
             MobileServices,
-            TransactionHome
+            TransactionHome,
+            HomePage
         }
 
         public static void Navigate(Button element, MetroWindow currentWindow, TargetWindow targetWindow)
@@ -37,6 +38,8 @@ namespace DoyenBiz.CitizenKiosk.Utilities
                     return new MobileServices();
                 case TargetWindow.TransactionHome:
                     return new TransactionHome();
+                case TargetWindow.HomePage:
+                    return new MainWindow();
                 default:
                     throw new System.NotImplementedException("Invalid target window!");
 

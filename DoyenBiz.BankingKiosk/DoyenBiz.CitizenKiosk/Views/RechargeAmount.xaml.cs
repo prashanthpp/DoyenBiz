@@ -1,4 +1,5 @@
-﻿using DoyenBiz.CitizenKiosk.ViewModels;
+﻿using DoyenBiz.CitizenKiosk.Utilities;
+using DoyenBiz.CitizenKiosk.ViewModels;
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,11 @@ namespace DoyenBiz.CitizenKiosk.Views
         {
             InitializeComponent();
             this.DataContext = (new RechargeAmountViewModel());
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationServiceHelper.Navigate((sender as Button), BaseViewModel.CurrentWindow, NavigationServiceHelper.TargetWindow.HomePage);
         }
     }
 }

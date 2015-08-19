@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using DoyenBiz.CitizenKiosk.ViewModels;
+using DoyenBiz.CitizenKiosk.Utilities;
 
 namespace DoyenBiz.CitizenKiosk.Views
 {
@@ -22,10 +23,18 @@ namespace DoyenBiz.CitizenKiosk.Views
     /// </summary>
     public partial class TransactionHome : MetroWindow
     {
+        public static string SelectedProvider;
         public TransactionHome()
         {
             InitializeComponent();
             TransactionHomeViewModel.CurrentWindow = this;
+            imgProvider.Source = new BitmapImage(new Uri(SelectedProvider, UriKind.Relative));
+        }
+
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.HomePage);
         }
     }
 }

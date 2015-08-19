@@ -42,10 +42,7 @@ namespace DoyenBiz.CitizenKiosk
             MobileServiceProvider_2_4,
             MobileServiceProvider_3_1,
             MobileServiceProvider_3_2,
-            MobileServiceProvider_4_1,
-            MobileServiceProvider_4_2,
-            MobileServiceProvider_4_3,
-            MobileServiceProvider_4_4
+   
         }
 
         public MobileServices()
@@ -55,50 +52,35 @@ namespace DoyenBiz.CitizenKiosk
             m_TimerCollection = new Dictionary<string, TransitionDispatcher>();
             m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_1_1.ToString(),
                      new TransitionDispatcher(MobileServiceProvider_1_1, TransitionTiles.MobileServiceProvider_1_1.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "MobileServiceProvider_1_1_logo.jpg", "MobileServiceProvider_1_1_text.jpg", TransitionDispatcher.TileSize.Large));
+                     "airtel.jpg", "airtel1.jpg", TransitionDispatcher.TileSize.Large));
             m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_1_2.ToString(),
                         new TransitionDispatcher(MobileServiceProvider_1_2, TransitionTiles.MobileServiceProvider_1_2.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                      "MobileServiceProvider_1_2_logo.jpg", "MobileServiceProvider_1_2_text.jpg", TransitionDispatcher.TileSize.Small));
+                      "uninor.jpg", "uninor1.jpg", TransitionDispatcher.TileSize.Small));
             m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_1_3.ToString(),
                      new TransitionDispatcher(MobileServiceProvider_1_3, TransitionTiles.MobileServiceProvider_1_3.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "MobileServiceProvider_1_3_logo.jpg", "MobileServiceProvider_1_3_text.jpg", TransitionDispatcher.TileSize.Large));
+                     "aircel.jpg", "aircel1.jpg", TransitionDispatcher.TileSize.Small));
             m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_2_1.ToString(),
                      new TransitionDispatcher(MobileServiceProvider_2_1, TransitionTiles.MobileServiceProvider_2_1.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "MobileServiceProvider_2_1_logo.jpg", "MobileServiceProvider_2_1_text.jpg", TransitionDispatcher.TileSize.Small));
+                     "idea.jpg", "idea1.jpg", TransitionDispatcher.TileSize.Small));
             m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_2_2.ToString(),
                      new TransitionDispatcher(MobileServiceProvider_2_2, TransitionTiles.MobileServiceProvider_2_2.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "MobileServiceProvider_2_2_logo.jpg", "MobileServiceProvider_2_2_text.jpg", TransitionDispatcher.TileSize.Small));
+                     "tata_indicom.jpg", "tata_indicom1.jpg", TransitionDispatcher.TileSize.Small));
             m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_2_3.ToString(),
                    new TransitionDispatcher(MobileServiceProvider_2_3, TransitionTiles.MobileServiceProvider_2_3.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                    "MobileServiceProvider_2_3_logo.jpg", "MobileServiceProvider_2_3_text.jpg", TransitionDispatcher.TileSize.Small));
+                    "reliance.jpg", "reliance1.jpg", TransitionDispatcher.TileSize.Large));
             m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_2_4.ToString(),
                    new TransitionDispatcher(MobileServiceProvider_2_4, TransitionTiles.MobileServiceProvider_2_4.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                    "MobileServiceProvider_2_4_logo.jpg", "MobileServiceProvider_2_4_text.jpg", TransitionDispatcher.TileSize.XL));
+                    "Vodafone.jpg", "Vodafone1.jpg", TransitionDispatcher.TileSize.Large));
             m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_3_1.ToString(),
                     new TransitionDispatcher(MobileServiceProvider_3_1, TransitionTiles.MobileServiceProvider_3_1.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "MobileServiceProvider_3_1_logo.jpg", "MobileServiceProvider_3_1_text.jpg", TransitionDispatcher.TileSize.Large));
+                     "bsnl_logo.jpg", "bsnl_logo1.jpg", TransitionDispatcher.TileSize.Small));
+
 
 
             m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_3_2.ToString(),
                   new TransitionDispatcher(MobileServiceProvider_3_2, TransitionTiles.MobileServiceProvider_3_2.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                   "uMobileServiceProvider_3_2_logo.jpg", "MobileServiceProvider_3_2_text.jpg", TransitionDispatcher.TileSize.Small));
+                   "tata_docomo.jpg", "tata_docomo1.jpg", TransitionDispatcher.TileSize.Large));
 
-            m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_4_1.ToString(),
-                    new TransitionDispatcher(MobileServiceProvider_4_1, TransitionTiles.MobileServiceProvider_4_1.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "MobileServiceProvider_4_1_logo.jpg", "MobileServiceProvider_4_1_text.jpg", TransitionDispatcher.TileSize.Small));
-
-            m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_4_2.ToString(),
-                    new TransitionDispatcher(MobileServiceProvider_4_2, TransitionTiles.MobileServiceProvider_4_2.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "MobileServiceProvider_4_2_logo.jpg", "MobileServiceProvider_4_2_text.jpg", TransitionDispatcher.TileSize.Small));
-
-            m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_4_3.ToString(),
-                    new TransitionDispatcher(MobileServiceProvider_4_3, TransitionTiles.MobileServiceProvider_4_3.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "MobileServiceProvider_4_3_logo.jpg", "MobileServiceProvider_4_3_text.jpg", TransitionDispatcher.TileSize.Large));
-
-
-            m_TimerCollection.Add(TransitionTiles.MobileServiceProvider_4_4.ToString(),
-                    new TransitionDispatcher(MobileServiceProvider_4_4, TransitionTiles.MobileServiceProvider_4_4.ToString(), new DispatcherTimer(TimeSpan.FromSeconds(0), DispatcherPriority.Normal, Transition, this.Dispatcher),
-                     "MobileServiceProvider_4_4_logo.jpg", "MobileServiceProvider_4_4_text.jpg", TransitionDispatcher.TileSize.Small));
 
 
             rndInterval = new Random();
@@ -106,6 +88,11 @@ namespace DoyenBiz.CitizenKiosk
 
         private void bank_click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.HomePage);
         }
 
         void Transition(object sender, EventArgs e)
@@ -129,17 +116,19 @@ namespace DoyenBiz.CitizenKiosk
                 tile.Height = 250;
             }
             var transitioning = transitionInfo.TransControl;
-            if (transitioning.Content == null || ((Tile)transitioning.Content).Tag.ToString() == "Text")
+            if (transitioning.Content == null || ((Tile)transitioning.Content).ToolTip.ToString() == "Text")
             {
 
                 //tile.TitleFontSize = 10;
-                tile.Background = new ImageBrush(new BitmapImage(new Uri(Environment.CurrentDirectory + string.Format("/Resources/Images/{0}", transitionInfo.ImageLogo), UriKind.Relative)));
-                tile.Tag = "Logo";
+                tile.Tag = Environment.CurrentDirectory + string.Format("/Resources/Images/{0}", transitionInfo.ImageLogo);
+                tile.Background = new ImageBrush(new BitmapImage(new Uri(tile.Tag.ToString(), UriKind.Relative)));
+                tile.ToolTip = "Logo";
             }
             else
             {
-                tile.Background = new ImageBrush(new BitmapImage(new Uri(Environment.CurrentDirectory + string.Format("/Resources/Images/{0}", transitionInfo.ImageText), UriKind.Relative)));
-                tile.Tag = "Text";
+                tile.Tag = Environment.CurrentDirectory + string.Format("/Resources/Images/{0}", transitionInfo.ImageText);
+                tile.Background = new ImageBrush(new BitmapImage(new Uri(tile.Tag.ToString(), UriKind.Relative)));
+                tile.ToolTip = "Text";
             }
             transitioning.Content = tile;// new BitmapImage(new Uri(""));
             transitionInfo.TransTimer.Interval = new TimeSpan(0, 0, rndInterval.Next(5));
@@ -148,7 +137,10 @@ namespace DoyenBiz.CitizenKiosk
 
         private void Tile_Click(object sender, RoutedEventArgs e)
         {
+            TransactionHome.SelectedProvider = ((Tile)sender).Tag.ToString().Replace(Environment.CurrentDirectory, string.Empty);
             NavigationServiceHelper.Navigate((sender as Button), this, NavigationServiceHelper.TargetWindow.TransactionHome);
         }
+       
+
     }
 }

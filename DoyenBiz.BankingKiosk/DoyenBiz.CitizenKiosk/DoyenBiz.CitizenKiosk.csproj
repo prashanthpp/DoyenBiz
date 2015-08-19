@@ -198,6 +198,41 @@
     <Resource Include="Resources\Images\Hand-Sign-11.png" />
     <Resource Include="Resources\Images\icici.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\aircel.jpg" />
+    <Resource Include="Resources\Images\aircel1.jpg" />
+    <Resource Include="Resources\Images\airtel.jpg" />
+    <Resource Include="Resources\Images\airtel1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\bsnl_logo.jpg" />
+    <Resource Include="Resources\Images\bsnl_logo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Exit-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\idea.jpg" />
+    <Resource Include="Resources\Images\idea1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\reliance.jpg" />
+    <Resource Include="Resources\Images\reliance1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\tata_docomo.jpg" />
+    <Resource Include="Resources\Images\tata_docomo1.jpg" />
+    <Resource Include="Resources\Images\tata_indicom.jpg" />
+    <Resource Include="Resources\Images\tata_indicom1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\uninor.jpg" />
+    <Resource Include="Resources\Images\uninor1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Vodafone.jpg" />
+    <Resource Include="Resources\Images\Vodafone1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

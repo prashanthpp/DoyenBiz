@@ -22,7 +22,9 @@
             <RowDefinition Height=".7*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" >
-            <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
+            <Button Background="Transparent"  Margin="0,0" Click="Home_Click" Width="80" HorizontalAlignment="Left">
+                <Image Source="/Resources/Images/Exit-03.png" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource screenLogoImage}"/>
+            </Button>
         </StackPanel>
         <kioskControls:KioskProgressBar x:Name="transactionProgressBar" Grid.Row="1" ItemsSource="{Binding Steps}" Foreground="#FF086398" Progress="{Binding Progress}" SnapsToDevicePixels="True" Margin="40"/>
         <Grid x:Name="inputPIN" Grid.Row="2">
